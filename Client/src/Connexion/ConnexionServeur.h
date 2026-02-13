@@ -2,11 +2,10 @@
 #define CONNEXIONSERVEUR_H
 
 #include <winsock2.h>
-#include <ws2tcpip.h> // For modern IP conversion functions
+#include <ws2tcpip.h>
 #include <iostream>
 #include <string>
 
-// Link with Ws2_32.lib
 #pragma comment(lib, "Ws2_32.lib")
 
 class ConnexionServeur {
@@ -15,7 +14,6 @@ private:
     std::string adresseServeur = "127.0.0.1";
     int portServeur = 9111;
 
-public:
     ConnexionServeur() {
         WSADATA wsaData;
         if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
@@ -37,10 +35,10 @@ public:
         if (connect(sock, (struct sockaddr*)&sockAddr, sizeof(sockAddr)) == SOCKET_ERROR) {
             closesocket(sock);
             WSACleanup();
-            throw std::runtime_error("Connection to server failed");
+            throw std::runtime_error("Connection impossible");
         }
-        
-        std::cout << "Connected to server successfully!" << std::endl;
+
+        std::cout << "Connecté au serveur de dessin" << std::endl;
     }
 
     ~ConnexionServeur() {
@@ -50,12 +48,18 @@ public:
         WSACleanup();
     }
 
-    void envoyerRequete(const std::string& message) const {
-        int bytesSent = send(sock, message.c_str(), static_cast<int>(message.length()), 0);
-        if (bytesSent == SOCKET_ERROR) {
-            std::cerr << "Send failed: " << WSAGetLastError() << std::endl;
-        }
+public:
+
+    static ConnexionServeur& getInstance() {
+        static ConnexionServeur instance;
+        return instance;
     }
+
+    ConnexionServeur(ConnexionServeur const&) = delete;
+    void operator=(const ConnexionServeur&) = delete;
+
+
+    void envoyerRequete(const std::string& message) const;
 };
 
 #endif //CONNEXIONSERVEUR_H

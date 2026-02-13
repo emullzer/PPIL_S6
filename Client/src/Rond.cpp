@@ -15,6 +15,6 @@ Rond::operator std::string() const {
 }
 
 void Rond::dessiner() const {
-    ConnexionServeur connexion;
-    connexion.envoyerRequete(this->operator std::string());
+    std::string message = this->operator std::string()+"\n";
+    ConnexionServeur::getInstance().envoyerRequete(message);
 }
