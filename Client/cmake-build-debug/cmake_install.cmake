@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/sanes/Documents/Developpement/exo ppil/export/PPIL EXO/Client
+# Install script for directory: C:/Users/sanes/Documents/PPIL_S6/Client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/sanes/Documents/Developpement/exo ppil/export/PPIL EXO/Client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/sanes/Documents/PPIL_S6/Client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

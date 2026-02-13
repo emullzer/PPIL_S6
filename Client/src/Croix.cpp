@@ -14,7 +14,7 @@ Croix::operator std::string() const {
 }
 
 void Croix::dessiner() const {
-    ConnexionServeur connexion;
-    connexion.envoyerRequete(this->operator std::string());
+    std::string message = this->operator std::string()+"\n";
+    ConnexionServeur::getInstance().envoyerRequete(message);
 
 }

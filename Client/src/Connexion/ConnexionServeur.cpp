@@ -4,12 +4,9 @@
 
 #include "ConnexionServeur.h"
 
-/*void ConnexionServeur::envoyerRequete(const std::string& message) const  {
-   int  r = send(sock,message.c_str(),message.length(),0);
-   if (r == SOCKET_ERROR) {
-       throw std::exception();
-   } else {
-       std::cout << "requete effectuée";
-   }
+void ConnexionServeur::envoyerRequete(const std::string& message) const  {
+    int testEnvoi = send(sock, message.c_str(), static_cast<int>(message.length()), 0);
+    if (testEnvoi == SOCKET_ERROR) {
+        std::cerr << "Send failed: " << WSAGetLastError() << std::endl;
+    }
 }
-*/
