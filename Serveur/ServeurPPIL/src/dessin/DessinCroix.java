@@ -1,5 +1,7 @@
 package dessin;
 
+import java.awt.*;
+
 import static java.lang.Integer.parseInt;
 
 public class DessinCroix extends Dessin {
@@ -9,11 +11,16 @@ public class DessinCroix extends Dessin {
     }
 
     @Override
-    public void dessiner(String forme) {
-        String valeurs[] = forme.split(",");
-        graphics.drawLine(parseInt(valeurs[0]), parseInt(valeurs[1]), parseInt(valeurs[2]), parseInt(valeurs[3]));
-        graphics.drawLine(parseInt(valeurs[0]), parseInt(valeurs[3]), parseInt(valeurs[2]), parseInt(valeurs[1]));
-        bufferStrategy.show();
-        graphics.dispose();
+    public void dessiner(String forme, Graphics g) {
+        try {
+            getInstanceFrame();
+            String valeurs[] = forme.split(",");
+            g.drawLine(parseInt(valeurs[0]), parseInt(valeurs[1]), parseInt(valeurs[2]), parseInt(valeurs[3]));
+            g.drawLine(parseInt(valeurs[0]), parseInt(valeurs[3]), parseInt(valeurs[2]), parseInt(valeurs[1]));
+            afficherDessin();
+        }catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
     }
 }
