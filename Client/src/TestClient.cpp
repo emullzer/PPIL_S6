@@ -9,6 +9,7 @@
 #include "Rond.h"
 
 int main() {
+    char ch;
     try {
         Forme *f1, *f2;
 
@@ -19,12 +20,13 @@ int main() {
         std::cout << "f2 = " << f1 << std::endl;
 
         f1->dessiner();
+        std::cin >> ch;
         f2->dessiner();
 
     }catch(std::exception& e) {
         std::cerr << "prob" << std::endl;
     }
-    char ch;
+
     std::cin >> ch;
     return 0;
 }

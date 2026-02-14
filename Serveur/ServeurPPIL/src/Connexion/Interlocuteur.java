@@ -2,6 +2,7 @@ package Connexion;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Objects;
 
 import dessin.*;
@@ -18,15 +19,14 @@ public class Interlocuteur extends Thread {
         this.fluxEntrant = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
         this.noConnexion = noConnexion;
-        // PAS DE CATCH ICI SINON C4EST QUE RIEN COMPRIS
-        //ici on sait pas reparer juste elle renvoie l'exception
+
     }
 
     public void run(){
         try {
             System.out.println("Enchanté je suis l'interlocuteur n° " + noConnexion + " et je suis à pret et à votre service");
 
-            while (!this.isInterrupted()) {
+
                 String requete = this.fluxEntrant.readLine();
 
                 if (requete == null) this.interrupt();
@@ -43,21 +43,19 @@ public class Interlocuteur extends Thread {
                     else {
                         dessin = new DessinCroix();
                     }
-                        dessin.framesetup();
                         String coordonnees = requete.split("\\[")[1];
                         coordonnees = coordonnees.substring(0,coordonnees.length()-1);
-                        dessin.dessiner(coordonnees);
+                        dessin.dessiner(coordonnees,Dessin.getGraphics());
 
 
                     this.fluxSortant.println("dessin.Dessin effectue");
                 }
-            }
-            System.out.println("le client n°" + this.noConnexion+ " a mis fin à la conversation");
 
-        }catch (IOException e) {
+
+        } catch (SocketException s){
+            System.out.println("le client n°" + this.noConnexion+ " a mis fin à la conversation");
+        } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
 }
