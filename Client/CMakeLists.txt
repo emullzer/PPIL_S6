@@ -4,14 +4,15 @@ project(PPIL_EXO)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(PPIL_EXO
-        src/Forme.cpp
-        src/Forme.h
-        src/Croix.cpp
-        src/Croix.h
-        src/Rond.cpp
-        src/Rond.h
+        src/Formes/Forme.cpp
+        src/Formes/Forme.h
+        src/Formes/Croix.cpp
+        src/Formes/Croix.h
+        src/Formes/Rond.cpp
+        src/Formes/Rond.h
         src/Connexion/ConnexionServeur.cpp
         src/Connexion/ConnexionServeur.h
-        src/TestClient.cpp
-        src/TestClient.h)
+        src/Tests/TestClient.cpp
+        src/Tests/TestClient.h
+        src/Formes/Vecteur2D.h)
 target_link_libraries(PPIL_EXO ws2_32)
