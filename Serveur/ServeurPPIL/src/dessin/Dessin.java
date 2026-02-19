@@ -31,14 +31,17 @@ public  class Dessin {
     }
 
     public void afficherDessin(ArrayList<Forme> formeArrayList){
-        Graphics g = getGraphics();
-        g.clearRect(0,0,frame.getWidth(),frame.getHeight());
+        Graphics2D g2 = (Graphics2D) getGraphics();
+
+        // Antialiasing pour trait propre
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        g2.clearRect(0,0,frame.getWidth(),frame.getHeight());
 
         for(Forme f : formeArrayList){
-            f.dessiner(g);
+            f.dessiner(g2);
         }
-
-        g.dispose();
         bufferStrategy.show();
+        g2.dispose();
     }
 }

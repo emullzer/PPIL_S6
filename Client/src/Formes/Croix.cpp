@@ -9,12 +9,13 @@
 #include "../Connexion/ConnexionServeur.h"
 
 Croix::operator std::string() const {
-    std::string result = "Croix[" + std::string(positionHautGauche) +"," + std::string(positionBasDroite) + "]";
-    return result;
+    std::ostringstream o;
+    o << "Croix[" << position << "," << longueur << "]";
+    return o.str();
 }
 
 void Croix::dessiner() const {
     std::string message = this->operator std::string()+"\n";
     ConnexionServeur::getInstance().envoyerRequete(message);
-
+    //std::cout << message ; // Utilisé pour debug
 }

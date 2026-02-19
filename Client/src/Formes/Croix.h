@@ -11,13 +11,14 @@
 class Croix: public Forme {
     protected:
 
-    Vecteur2D positionHautGauche, positionBasDroite;
+    Vecteur2D position;
+    double longueur;
 
 
 public:
-    Croix(const double g,const double h,const double d,const double b) {
-        positionHautGauche = Vecteur2D(g,h);
-        positionBasDroite = Vecteur2D(d,b);
+    Croix(const double x,const double y,const double longueur); {
+        position = Vecteur2D(x,y);
+        this->longueur = longueur;
     }
 
     explicit operator std::string() const override;

@@ -1,22 +1,23 @@
 package Forme;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 
 public class Croix extends Forme{
-    int gauche,haut,droite,bas;
+    double x,y,longueur;
 
-    public Croix(int gauche, int haut, int droite, int bas) {
-        this.gauche = gauche;
-        this.haut = haut;
-        this.droite = droite;
-        this.bas = bas;
+    public Croix(double x, double y, double longueur) {
+        this.x = x;
+        this.y = y;
+        this.longueur = longueur;
     }
 
     @Override
-    public void dessiner(Graphics g) {
+    public void dessiner(Graphics2D g) {
         //TODO Couleur
-        g.drawLine(gauche,haut, droite, bas);
-        g.drawLine(gauche, bas, droite, haut);
+        double rayon = longueur/2;
+        g.draw(new Line2D.Double(x -rayon,y-rayon,x+rayon,y+rayon));
+        g.draw(new Line2D.Double(x +rayon,y-rayon,x-rayon,y+rayon));
     }
 
     @Override
