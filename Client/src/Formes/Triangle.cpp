@@ -1,21 +1,19 @@
 //
-// Created by mulle1149u on 07/02/2026.
+// Created by sanes on 19/02/2026.
 //
 
-#include "Rond.h"
-#include <iostream>
-#include <cmath>
-
+#include "Triangle.h"
 #include "../Connexion/ConnexionServeur.h"
 
 
-Rond::operator std::string() const {
+Triangle::operator std::string() const {
     std::ostringstream o;
-    o << "Rond[" << position << "," << rayon << "]";
+    o << "Triangle[" << sommet1 << "," << sommet2 << "," << sommet3 << "]";
     return o.str();
 }
 
-void Rond::dessiner() const {
+
+void Triangle::dessiner() const{
     std::string message = this->operator std::string()+"\n";
     ConnexionServeur::getInstance().envoyerRequete(message);
 }

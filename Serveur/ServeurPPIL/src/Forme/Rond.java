@@ -1,9 +1,10 @@
 package Forme;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 public class Rond extends Forme{
-    int xCentre, yCentre,rayon;
+    double xCentre, yCentre,rayon;
 
     public Rond(int xCentre, int yCentre, int rayon) {
         this.xCentre = xCentre;
@@ -12,9 +13,9 @@ public class Rond extends Forme{
     }
 
     @Override
-    public void dessiner(Graphics g) {
+    public void dessiner(Graphics2D g) {
         //TODO Couleur
-        g.fillOval(xCentre, yCentre , rayon, rayon);
+        g.fill(new Ellipse2D.Double(xCentre,yCentre,rayon,rayon));
 
     }
 

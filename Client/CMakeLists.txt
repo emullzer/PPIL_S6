@@ -14,5 +14,7 @@ add_executable(PPIL_EXO
         src/Connexion/ConnexionServeur.h
         src/Tests/TestClient.cpp
         src/Tests/TestClient.h
-        src/Formes/Vecteur2D.h)
+        src/Formes/Vecteur2D.h
+        src/Formes/Triangle.cpp
+        src/main.cpp)
 target_link_libraries(PPIL_EXO ws2_32)

@@ -1,4 +1,25 @@
 # ninja log v6
 42	2423	7927081433375485	CMakeFiles/PPIL_EXO.dir/src/Connexion/ConnexionServeur.cpp.obj	96af5fe9bb9e9be
 500	631	7927668750545501	PPIL_EXO.exe	c0cba5e251d5cab1
-48	2639	7932269941297098	build.ninja	4c7e34aff8d516a4
+48	2639	7932281733422973	build.ninja	4c7e34aff8d516a4
+7	831	7932283066316311	CMakeFiles/PPIL_EXO.dir/src/Formes/Forme.cpp.obj	ecb5908818b7783c
+831	1548	7932283074558788	CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj	e65a5e95f142c67e
+22	6491	7932283066459420	CMakeFiles/PPIL_EXO.dir/src/Connexion/ConnexionServeur.cpp.obj	96af5fe9bb9e9be
+23	1226	7932285050447152	CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj	400bc76aebfe4686
+17	917	7932286055260625	CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj	e65a5e95f142c67e
+21	2351	7932286055320105	CMakeFiles/PPIL_EXO.dir/src/Formes/Triangle.cpp.obj	6191baf166e84a87
+6	2556	7932286257460456	CMakeFiles/PPIL_EXO.dir/src/Formes/Croix.cpp.obj	cd4328eea5d3a426
+6	1978	7932286834089759	CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj	9f8818b196ab8da2
+7	508	7932287090656136	CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj	400bc76aebfe4686
+19	781	7932288333493071	CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj	e65a5e95f142c67e
+14	2274	7932288333427527	CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj	9f8818b196ab8da2
+25	2325	7932288333548751	CMakeFiles/PPIL_EXO.dir/src/Formes/Triangle.cpp.obj	6191baf166e84a87
+7	2345	7932288333366775	CMakeFiles/PPIL_EXO.dir/src/Formes/Croix.cpp.obj	cd4328eea5d3a426
+2345	2544	7932288356746158	PPIL_EXO.exe	ce58628fc88b4b6f
+23	1401	7932290727496550	CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj	e65a5e95f142c67e
+9	3319	7932290727366350	CMakeFiles/PPIL_EXO.dir/src/Formes/Croix.cpp.obj	cd4328eea5d3a426
+17	3352	7932290727441011	CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj	9f8818b196ab8da2
+28	3384	7932290727557949	CMakeFiles/PPIL_EXO.dir/src/Formes/Triangle.cpp.obj	6191baf166e84a87
+3384	3534	7932290761119856	PPIL_EXO.exe	ce58628fc88b4b6f
+9	2616	7932291086878253	CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj	9f8818b196ab8da2
+2617	2765	7932291112959119	PPIL_EXO.exe	ce58628fc88b4b6f

@@ -7,7 +7,7 @@
 #include <sstream>
 #include <cmath>
 
-using namespace std;
+
 class Vecteur2D
 {
 	public:
@@ -16,7 +16,7 @@ class Vecteur2D
 		operator std::string()const
 	{
 		std::ostringstream o;
-		o << x << ", " << this->y;
+		o << x << "," << this->y;
 		return o.str();
 	}
 
@@ -63,14 +63,11 @@ double norme()const //norme
 };
 
 
-Vecteur2D operator*(const double &a,const Vecteur2D& v)
-{
-	return v*a;
-}
+Vecteur2D operator*(const double &a,const Vecteur2D& v);
 
-inline ostream& operator<<(ostream &o,const Vecteur2D &v)
+inline std::ostream& operator<<(std::ostream &o,const Vecteur2D &v)
 {
-	o << (string)v;
+	o << (std::string)v;
 	return o;
 }
 
