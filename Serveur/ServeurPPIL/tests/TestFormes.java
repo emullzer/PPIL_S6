@@ -16,5 +16,6 @@ public class TestFormes {
         formes.add(croix);
         formes.add(rond);
         dessin.afficherDessin(formes);
+        //test
     }
 }
