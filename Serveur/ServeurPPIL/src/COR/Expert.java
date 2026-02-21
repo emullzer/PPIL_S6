@@ -1,10 +1,16 @@
 package COR;
 
+import Forme.Forme;
+
+import java.util.ArrayList;
+
 public abstract class Expert {
     Expert suivant;
+    ArrayList<Forme> formes;
 
-    public Expert(Expert suivant) {
+    public Expert(ArrayList<Forme> liste, Expert suivant) {
         this.suivant = suivant;
+        this.formes = liste;
     }
 
     public String afficher(String text) {
@@ -33,4 +39,10 @@ public abstract class Expert {
     }
 
     public abstract String afficher2(String text);
+
+    protected String[] getValeurs(String text){
+        String valeurs = text.split("\\[")[1];
+        valeurs = valeurs.replace("]", "");
+        return valeurs.split(",");
+    }
 }

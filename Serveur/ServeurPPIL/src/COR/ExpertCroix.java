@@ -1,8 +1,13 @@
 package COR;
 
-public class ExpertCroix {
-    public ExpertCroix(Expert suivant) {
-        super();
+import Forme.Forme;
+import Forme.Croix;
+
+import java.util.ArrayList;
+
+public class ExpertCroix extends Expert{
+    public ExpertCroix(ArrayList<Forme> formes, Expert suivant) {
+        super(formes,suivant);
     }
 
     public String afficher2(String text) {
@@ -11,9 +16,13 @@ public class ExpertCroix {
             return null;
         }
 
-        String valeurs = text.split("\\[")[1];
-        valeurs = valeurs.replace("]", ""); // on remplace le dernier caractère par du vide
-        String[] positions = valeurs.split(",");
-        return "Croix dessinee.";
+        try {
+            String[] valeurs = getValeurs(text);
+            formes.add(new Croix(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2])));
+            return "Croix ajoute.";
+        }catch (NumberFormatException e)
+        {
+            return "Probleme dans les valeurs de Croix.";
+        }
     }
 }

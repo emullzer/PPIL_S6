@@ -16,7 +16,7 @@ class Croix: public Forme {
 
 
 public:
-    Croix(const double x,const double y,const double longueur); {
+    Croix(const double x,const double y,const double longueur) {
         position = Vecteur2D(x,y);
         this->longueur = longueur;
     }

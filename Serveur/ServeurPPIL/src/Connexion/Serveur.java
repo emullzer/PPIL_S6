@@ -23,8 +23,8 @@ public class Serveur extends Thread {
                 nConnection++;
                 System.out.println("Connexion n'"+nConnection);
 
-                GestionnaireFormes gestionnaireFormes = new GestionnaireFormes(socket,nConnection);
-                gestionnaireFormes.start();
+                Interlocuteur interlocuteur = new Interlocuteur(socket,nConnection);
+                interlocuteur.start();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
