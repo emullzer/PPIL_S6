@@ -16,7 +16,7 @@ int main() {
 
         f1 = new Croix(40,100,100);
         f2 = new Rond(300,300,30);
-        f3 = new Triangle(70,70.8,47.9,78.0,238.8,65);
+        f3 = new Triangle(150,70.8,120,150.2,180,70.8);
 
         std::cout << "f1 = " << f1 << std::endl;
         std::cout << "f2 = " << f1 << std::endl;
