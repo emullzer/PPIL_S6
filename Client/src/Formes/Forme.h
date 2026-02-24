@@ -9,6 +9,8 @@
 
 
 class Forme {
+protected:
+    std::string color;
 public:
     virtual ~Forme() = default;
 

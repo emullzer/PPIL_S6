@@ -8,7 +8,7 @@
 
 Triangle::operator std::string() const {
     std::ostringstream o;
-    o << "Triangle[" << sommet1 << "," << sommet2 << "," << sommet3 << "]";
+    o << "Triangle[" << sommet1 << "," << sommet2 << "," << sommet3 << color << "]";
     return o.str();
 }
 

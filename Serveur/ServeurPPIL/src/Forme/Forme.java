@@ -3,6 +3,7 @@ package Forme;
 import java.awt.*;
 
 public abstract class Forme {
+    String color;
     /**
      * Fonction qui va être appelée par Dessin et qui trace la forme adéquate
      * sur le graphics en paramètre.
