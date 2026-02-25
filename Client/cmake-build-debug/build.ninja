@@ -91,6 +91,12 @@ build CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj: CXX_COMPILER__PPIL_EXO_unscanned
   OBJECT_DIR = CMakeFiles\PPIL_EXO.dir
   OBJECT_FILE_DIR = CMakeFiles\PPIL_EXO.dir\src
 
+build CMakeFiles/PPIL_EXO.dir/src/Formes/Groupe.cpp.obj: CXX_COMPILER__PPIL_EXO_unscanned_Debug C$:/Users/sanes/Documents/PPIL_S6/Client/src/Formes/Groupe.cpp || cmake_object_order_depends_target_PPIL_EXO
+  DEP_FILE = CMakeFiles\PPIL_EXO.dir\src\Formes\Groupe.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\PPIL_EXO.dir
+  OBJECT_FILE_DIR = CMakeFiles\PPIL_EXO.dir\src\Formes
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PPIL_EXO
@@ -99,7 +105,7 @@ build CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj: CXX_COMPILER__PPIL_EXO_unscanned
 #############################################
 # Link the executable PPIL_EXO.exe
 
-build PPIL_EXO.exe: CXX_EXECUTABLE_LINKER__PPIL_EXO_Debug CMakeFiles/PPIL_EXO.dir/src/Formes/Forme.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Croix.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Connexion/ConnexionServeur.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Triangle.cpp.obj CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj
+build PPIL_EXO.exe: CXX_EXECUTABLE_LINKER__PPIL_EXO_Debug CMakeFiles/PPIL_EXO.dir/src/Formes/Forme.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Croix.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Rond.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Connexion/ConnexionServeur.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Tests/TestClient.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Triangle.cpp.obj CMakeFiles/PPIL_EXO.dir/src/main.cpp.obj CMakeFiles/PPIL_EXO.dir/src/Formes/Groupe.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PPIL_EXO.dir

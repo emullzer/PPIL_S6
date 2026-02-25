@@ -4,6 +4,7 @@
 
 #include "Triangle.h"
 #include "../Connexion/ConnexionServeur.h"
+#include <sstream>
 
 
 Triangle::operator std::string() const {

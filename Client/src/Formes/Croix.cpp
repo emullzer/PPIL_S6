@@ -3,9 +3,7 @@
 //
 
 #include "Croix.h"
-#include <string>
-#include <cmath>
-
+#include <sstream>
 #include "../Connexion/ConnexionServeur.h"
 
 Croix::operator std::string() const {

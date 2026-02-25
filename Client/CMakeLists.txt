@@ -16,5 +16,7 @@ add_executable(PPIL_EXO
         src/Tests/TestClient.h
         src/Formes/Vecteur2D.h
         src/Formes/Triangle.cpp
-        src/main.cpp)
+        src/main.cpp
+        src/Formes/Groupe.h
+        src/Formes/Groupe.cpp)
 target_link_libraries(PPIL_EXO ws2_32)

@@ -3,9 +3,7 @@
 //
 
 #include "Rond.h"
-#include <iostream>
-#include <cmath>
-
+#include <sstream>
 #include "../Connexion/ConnexionServeur.h"
 
 
