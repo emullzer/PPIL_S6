@@ -11,7 +11,7 @@
 
 Rond::operator std::string() const {
     std::ostringstream o;
-    o << "Rond[" << position << "," << rayon << color << "]";
+    o << "Rond[" << position << "," << rayon << "," << color << "]";
     return o.str();
 }
 

@@ -2,7 +2,9 @@ package COR;
 
 import Forme.Forme;
 import Forme.Croix;
+import dessin.TraducteurCouleur;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertCroix extends Expert{
@@ -18,7 +20,10 @@ public class ExpertCroix extends Expert{
 
         try {
             String[] valeurs = getValeurs(text);
-            formes.add(new Croix(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2])));
+            Color color = TraducteurCouleur.getCouleur(valeurs[3]);
+            System.out.println(Color.blue);
+
+            formes.add(new Croix(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color));
             return "Croix ajoute.";
         }catch (NumberFormatException e)
         {

@@ -15,9 +15,10 @@ class Rond: public Forme {
     Vecteur2D position;
 
     public:
-    Rond(double x, double y, double r) {
+    Rond(double x, double y, double r,const std::string& color) {
         position = Vecteur2D(x,y);
         this->rayon = r;
+        this->color = color;
     }
 
     void dessiner() const override;

@@ -2,7 +2,9 @@ package COR;
 
 import Forme.Forme;
 import Forme.Rond;
+import dessin.TraducteurCouleur;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertRond extends Expert{
@@ -17,7 +19,9 @@ public class ExpertRond extends Expert{
         }
         try {
             String[] valeurs = getValeurs(text);
-            formes.add(new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2])));
+            Color color = TraducteurCouleur.getCouleur(valeurs[3]);
+
+            formes.add(new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color));
             return "Rond ajoute";
         }catch (NumberFormatException e){
             return "Probleme avec les valeurs de Rond.";
