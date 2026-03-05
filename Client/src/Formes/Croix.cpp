@@ -17,3 +17,7 @@ void Croix::dessiner() const {
     ConnexionServeur::getInstance().envoyerRequete(message);
     //std::cout << message ; // Utilisé pour debug
 }
+
+double Croix::calculerAire() const {
+    return 0;
+}

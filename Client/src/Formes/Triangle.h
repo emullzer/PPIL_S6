@@ -22,6 +22,7 @@ class Triangle: public Forme{
 
     void dessiner() const override;
     explicit operator std::string() const override;
+    double calculerAire() const override;
 
 };
 

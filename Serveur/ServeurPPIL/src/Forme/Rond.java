@@ -20,8 +20,4 @@ public class Rond extends Forme{
 
     }
 
-    @Override
-    public double calculerAire() {
-        return 0;
-    }
 }

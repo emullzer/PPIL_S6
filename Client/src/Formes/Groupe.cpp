@@ -24,3 +24,7 @@ void Groupe::dessiner() const {
     ConnexionServeur::getInstance().envoyerRequete(message);
     //std::cout << message ; // Utilisé pour debug
 }
+
+double Groupe::calculerAire() const {
+    return 0;
+}

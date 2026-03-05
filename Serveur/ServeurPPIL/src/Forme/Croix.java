@@ -21,8 +21,4 @@ public class Croix extends Forme{
         g.draw(new Line2D.Double(x +rayon,y-rayon,x-rayon,y+rayon));
     }
 
-    @Override
-    public double calculerAire() {
-        return 0;
-    }
 }

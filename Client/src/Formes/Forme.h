@@ -16,6 +16,7 @@ public:
 
     virtual void dessiner() const = 0;
     virtual explicit operator std::string() const =0;
+    virtual double calculerAire() const = 0;
 };
 
 

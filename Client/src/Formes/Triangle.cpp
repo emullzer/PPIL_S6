@@ -18,3 +18,7 @@ void Triangle::dessiner() const{
     std::string message = this->operator std::string()+"\n";
     ConnexionServeur::getInstance().envoyerRequete(message);
 }
+
+double Triangle::calculerAire() const {
+    return 0; //TODO
+}

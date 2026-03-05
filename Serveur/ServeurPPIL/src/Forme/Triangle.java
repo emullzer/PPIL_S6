@@ -28,9 +28,5 @@ public class Triangle extends Forme{
 
         g.fill(triangle);
     }
-
-    @Override
-    public double calculerAire() {
-        return 0;
-    }
+    
 }

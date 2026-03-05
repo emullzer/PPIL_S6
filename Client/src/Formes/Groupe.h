@@ -25,6 +25,7 @@ public:
 
     explicit operator std::string() const override;
     void dessiner() const override;
+    double calculerAire() const override;
 
 };
 
