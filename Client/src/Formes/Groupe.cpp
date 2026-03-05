@@ -20,6 +20,7 @@ Groupe::operator std::string() const {
 }
 
 void Groupe::dessiner() const {
+    v.visit(this)
     std::string message = this->operator std::string()+"\n";
     ConnexionServeur::getInstance().envoyerRequete(message);
     //std::cout << message ; // Utilisé pour debug

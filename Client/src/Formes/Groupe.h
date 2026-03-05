@@ -32,3 +32,4 @@ public:
 
 
 #endif //GROUPE_H
+dessiner(Visteur* v)

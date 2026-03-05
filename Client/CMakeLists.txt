@@ -18,5 +18,7 @@ add_executable(PPIL_EXO
         src/Formes/Triangle.cpp
         src/main.cpp
         src/Formes/Groupe.h
-        src/Formes/Groupe.cpp)
+        src/Formes/Groupe.cpp
+        src/Formes/Polygone.cpp
+        src/Formes/Polygone.h)
 target_link_libraries(PPIL_EXO ws2_32)
