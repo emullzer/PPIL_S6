@@ -14,7 +14,11 @@ add_executable(PPIL_EXO
         src/Connexion/ConnexionServeur.h
         src/Tests/TestClient.cpp
         src/Tests/TestClient.h
-        src/Formes/Vecteur2D.h
+        src/Calculs/Vecteur2D.h
+        src/Calculs/Vecteur2D.cpp
+        src/Calculs/Matrice22.h
+        src/Calculs/Plan.h
+        src/Calculs/Plan.cpp
         src/Formes/Triangle.cpp
         src/main.cpp
         src/Formes/Groupe.h

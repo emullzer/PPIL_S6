@@ -7,7 +7,7 @@
 #include "Forme.h"
 #include <iostream>
 
-#include "Vecteur2D.h"
+#include "../Calculs/Vecteur2D.h"
 
 
 class Rond: public Forme {

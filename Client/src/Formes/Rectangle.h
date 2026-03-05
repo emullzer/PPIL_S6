@@ -1,0 +1,32 @@
+//
+// Created by sanes on 05/03/2026.
+//
+
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+#include "../Calculs/Vecteur2D.h"
+#include "Forme.h"
+
+
+class Rectangle: public Forme {
+
+    Vecteur2D pointHautGauche;
+    Vecteur2D pointBasDroit;
+
+public:
+    Rectangle(double x1, double y1,double x2, double y2, const std::string& color) {
+        pointHautGauche = Vecteur2D(x1,y1);
+        pointBasDroit = Vecteur2D(x2,y2);
+        this->color = color;
+        id = auto_id++;
+    }
+
+    void dessiner() const override;
+    explicit operator std::string() const override;
+    double calculerAire() const override;
+};
+
+
+
+#endif //RECTANGLE_H

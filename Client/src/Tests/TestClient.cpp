@@ -14,11 +14,10 @@
 int main() {
     char ch;
     try {
-        Forme *f1, *f2, *f3;
+        Forme *f1, *f2;
 
         f1 = new Croix(200,200,50,"green");
         f2 = new Rond(300,50,90,"red");
-        f3 = new Triangle(150,70.8,120,150.2,180,70.8,"blue");
 
         std::cout << "f1 = " << f1 << std::endl;
         std::cout << "f2 = " << f1 << std::endl;

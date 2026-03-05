@@ -18,9 +18,14 @@ public  class Dessin {
         try {
             if (frame == null) {
                 frame = new Frame("Fenêtre de dessin");
-                frame.setBounds(30, 60, 400, 400);
-                frame.setVisible(true);
+
+                Canvas canvas = new Canvas();
+                canvas.setSize(800, 600);
+                frame.add(canvas);
                 frame.setIgnoreRepaint(true);
+                frame.setResizable(false);
+                frame.pack();
+                frame.setVisible(true);
                 frame.createBufferStrategy(2);
                 Thread.sleep(150);
 
@@ -47,5 +52,10 @@ public  class Dessin {
         }
         bufferStrategy.show();
         g2.dispose();
+    }
+
+    public void changerTailleCanvas(int longueur, int hauteur)
+    {
+
     }
 }

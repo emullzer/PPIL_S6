@@ -5,7 +5,7 @@
 #ifndef CROIX_H
 #define CROIX_H
 #include "Forme.h"
-#include "Vecteur2D.h"
+#include "../Calculs/Vecteur2D.h"
 #include <iostream>
 
 

@@ -6,7 +6,7 @@
 #define TRIANGLE_H
 
 #include "Forme.h"
-#include "Vecteur2D.h"
+#include "../Calculs/Vecteur2D.h"
 
 class Triangle: public Forme{
     Vecteur2D sommet1, sommet2, sommet3;
