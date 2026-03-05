@@ -21,6 +21,7 @@ public:
         position = Vecteur2D(x,y);
         this->longueur = longueur;
         this->color = color;
+        id = auto_id++;
     }
 
     explicit operator std::string() const override;

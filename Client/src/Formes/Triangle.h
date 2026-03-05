@@ -18,6 +18,7 @@ class Triangle: public Forme{
         sommet2 = Vecteur2D(x2, y2);
         sommet3 = Vecteur2D(x3, y3);
         this->color = color;
+        id = auto_id++;
     }
 
     void dessiner() const override;

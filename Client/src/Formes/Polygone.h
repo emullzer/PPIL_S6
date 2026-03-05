@@ -18,6 +18,7 @@ class Polygone : public Forme {
         explicit Polygone(const std::string& color) {
             points.clear();
             this->color = color;
+            id = auto_id++;
         }
         Polygone(const std::string& color, const std::vector<Vecteur2D>& points) {
             this->color = color;

@@ -10,7 +10,7 @@
 
 class ConnexionServeur {
 private:
-    SOCKET sock = INVALID_SOCKET;
+    SOCKET sock;
     std::string adresseServeur = "127.0.0.1";
     int portServeur = 9111;
 

@@ -17,6 +17,7 @@ private:
 public:
     explicit Groupe(const std::string &couleur){
         this->color = couleur;
+        id = auto_id++;
     }
     ~Groupe() override = default;
     void ajouterForme(Forme* &forme) {
@@ -32,4 +33,3 @@ public:
 
 
 #endif //GROUPE_H
-dessiner(Visteur* v)

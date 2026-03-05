@@ -19,6 +19,7 @@ class Rond: public Forme {
         position = Vecteur2D(x,y);
         this->rayon = r;
         this->color = color;
+        id = auto_id++;
     }
 
     void dessiner() const override;
