@@ -1,0 +1,21 @@
+# Dossiers de build (CMake)
+cmake-build-debug/
+cmake-build-release/
+build/
+bin/
+obj/
+
+# Fichiers spécifiques à CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Exécutables et fichiers objets
+*.exe
+*.out
+*.app
+*.o
+*.obj
