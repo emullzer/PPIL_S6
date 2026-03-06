@@ -16,4 +16,10 @@ void Plan::calculerMatrice(){
     matrice = Matrice22(lambda,0,0,lambda*-1);
   }
 
+Vecteur2D Plan::getOmega() const {
+    Vecteur2D omega = Vecteur2D(getLPixel()/2,getHPixel()/2) -
+        (matrice*Vecteur2D(getLMonde()/2,getHMonde()/2));
+    return omega;
+}
+
 

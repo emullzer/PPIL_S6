@@ -25,3 +25,10 @@ void Polygone::dessiner() const {
 double Polygone::calculerAire() const {
     return 0;
 }
+
+void Polygone::preparerPixel(Plan &plan) {
+    Vecteur2D omega = plan.getOmega();
+    for( auto const& point : points ) {
+        pointsPixel.push_back(plan.getMatrice()* point +omega);
+    }
+}

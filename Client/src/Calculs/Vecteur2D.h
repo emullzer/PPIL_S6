@@ -67,6 +67,19 @@ double getX()const {
 			return y;
 		}
 
+	static double determinant(const Vecteur2D& a,const Vecteur2D& b,const Vecteur2D& c)
+		{
+			Vecteur2D u = a - b;
+			Vecteur2D v = c - a;
+
+			return (u.x * v.y) - (u.y * v.x);
+		}
+	static bool sontCollineaires(const Vecteur2D& a,const Vecteur2D& b,const Vecteur2D& c) {
+			double det = determinant(a,b,c);
+			if (det = 0) return true;
+			else return false;
+		}
+
 };
 
 

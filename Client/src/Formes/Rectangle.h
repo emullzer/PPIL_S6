@@ -41,7 +41,7 @@ public:
         return pointHautGauche.getX();
     }
 
-    void preparerPixel(const Plan &plan) const override;
+    void preparerPixel(Plan &plan) override;
 };
 
 

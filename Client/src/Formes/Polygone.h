@@ -65,7 +65,7 @@ class Polygone : public Forme {
         return min;
     }
 
-    void preparerPixel(Plan &plan) const override;
+    void preparerPixel(Plan &plan) override;
 
 };
 

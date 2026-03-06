@@ -54,6 +54,9 @@ class Plan {
     [[nodiscard]] int getLPixel() const {
         return lPixel;
     }
+
+    Vecteur2D getOmega() const;
+
 };
 
 

@@ -24,10 +24,7 @@ double Rond::calculerAire() const {
 }
 
 void Rond::preparerPixel( Plan &plan) {
-    Matrice22 matrice = plan.getMatrice();
-    //calcul de a et b; omega = c' - L * C
-    Vecteur2D omega = Vecteur2D(plan.getLPixel()/2,plan.getHPixel()/2) -
-        (plan.getMatrice()*Vecteur2D(plan.getLMonde()/2,plan.getHMonde()/2));
+    Vecteur2D omega = plan.getOmega();
 
     positionPixel = plan.getMatrice()* position +omega;
     rayonPixel = rayon * plan.getLambda();

@@ -20,5 +20,14 @@ void Triangle::dessiner() const{
 }
 
 double Triangle::calculerAire() const {
-    return 0; //TODO
+    double aire = 0.5 * std::abs(Vecteur2D::determinant(sommet1,sommet2,sommet3));
+    return aire;
+}
+
+void Triangle::preparerPixel(Plan &plan) {
+    Vecteur2D omega = plan.getOmega();
+
+    sommet1Pixel = plan.getMatrice() * sommet1 + omega;
+    sommet2Pixel = plan.getMatrice() * sommet2 + omega;
+    sommet3Pixel = plan.getMatrice() * sommet3 + omega;
 }
