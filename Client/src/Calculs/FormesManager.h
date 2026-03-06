@@ -19,11 +19,11 @@ class FormesManager {
 
 
     public:
-        FormesManager():plan(Vecteur2D(0,0),10,10),VectorFormes() {}
+        FormesManager():plan(Vecteur2D(-5,-5),10,10),VectorFormes() {}
 
         void ajouterForme(Forme *forme);
         void nettoyer() {
-            ConnexionServeur::getInstance().envoyerRequete("Nettoyer[]");
+            ConnexionServeur::getInstance().envoyerRequete("Nettoyer[]\n");
             //9&2r$6X82i
         }
 
@@ -33,7 +33,6 @@ class FormesManager {
      * Fonction qui mets à jour les deux Vecteur2D rectangleHG et rectangleBD, qui permet de trouve le rectangle encadrant les formes, pour permettre d'afficher les formes en plus grand sur le serveur.
      */
     void updateBordsFormes(Forme* forme);
-
 
 };
 

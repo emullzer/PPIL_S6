@@ -10,17 +10,19 @@
 class Plan {
     static Plan* instance;
 
-    Vecteur2D origine; // egal a minX, min Y
+    //Vecteur2D origine; // egal a minX, min Y
     double hMonde, lMonde; // longeur = maxX - minX et pareil pour hauteur
     int hPixel=600, lPixel=800;
     double lambda =1;
+
+    Vecteur2D rectangleBD,rectangleHG;
 
     Matrice22 matrice= Matrice22(0,0,0,0);
 
     public:
 
-      Plan(const Vecteur2D& origine, const double &hMonde, const double& lMonde): origine(origine), hMonde(hMonde),
-                lMonde(lMonde) {
+      Plan(const Vecteur2D& origine, const double &hMonde, const double& lMonde): hMonde(hMonde),
+                lMonde(lMonde), rectangleBD(origine.x+lMonde, origine.y),rectangleHG(origine.x,origine.y +hMonde){
                 calculerMatrice();
             }
 
@@ -55,8 +57,14 @@ class Plan {
         return lPixel;
     }
 
-    Vecteur2D getOmega() const;
+    void updateMatrice(Vecteur2D bd, Vecteur2D hg) {
+            this->rectangleBD = bd;
+            this->rectangleHG = hg;
+            this->hMonde = hg.y - bd.y;
+            this->lMonde = bd.x - hg.x;
+        }
 
+    Vecteur2D getOmega();
 };
 
 

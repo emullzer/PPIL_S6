@@ -12,18 +12,22 @@ void FormesManager::ajouterForme(Forme *forme) {
         rectangleBD = Vecteur2D(forme->getMaxX(),forme->getMinY());
     }else {
         updateBordsFormes(forme);
+    }
+        plan.updateMatrice(rectangleBD.value(),rectangleHG.value());
+
         plan.setHMonde((rectangleBD->getX()-rectangleHG->getX()));
         plan.setLMonde((rectangleHG->getY()-rectangleBD->getY()));
         plan.calculerMatrice();
+        //nettoyer();
         dessinerFormes();
-    }
+
 }
 
 void FormesManager::updateBordsFormes(Forme* forme) {
-    double minX = std::min(forme->getMinX(),rectangleHG->getX())*0.95;
-    double minY = std::min(forme->getMinY(),rectangleBD->getY())*0.95;
-    double maxX = std::min(forme->getMaxX(),rectangleBD->getX())*1.05;
-    double maxY = std::min(forme->getMaxY(),rectangleHG->getY())*1.05;
+    double minX = std::min(forme->getMinX(),rectangleHG->getX());
+    double minY = std::min(forme->getMinY(),rectangleBD->getY());
+    double maxX = std::min(forme->getMaxX(),rectangleBD->getX());
+    double maxY = std::min(forme->getMaxY(),rectangleHG->getY());
 
 
     rectangleHG = Vecteur2D(minX,maxY);

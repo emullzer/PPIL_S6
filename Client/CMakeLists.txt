@@ -10,6 +10,8 @@ add_executable(PPIL_EXO
         src/Formes/Croix.h
         src/Formes/Rond.cpp
         src/Formes/Rond.h
+        src/Formes/Rectangle.cpp
+        src/Formes/Rectangle.h
         src/Connexion/ConnexionServeur.cpp
         src/Connexion/ConnexionServeur.h
         src/Tests/TestClient.cpp

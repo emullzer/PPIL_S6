@@ -3,22 +3,24 @@
 //
 
 #include "Rectangle.h"
+#include "../Connexion/ConnexionServeur.h"
 
-void Rectangle::dessiner() const {
-
+void Formes::Rectangle::dessiner() const {
+    std::string message = this->operator std::string()+"\n";
+    ConnexionServeur::getInstance().envoyerRequete(message);
 }
 
-Rectangle::operator std::string() const {
+Formes::Rectangle::operator std::string() const {
     std::ostringstream o;
-
+    o << "Rectangle[" << pointHautGauchePixel << "," << pointBasDroitPixel <<"," << color << "]";
     return o.str();
 }
 
-double Rectangle::calculerAire() const {
+double Formes::Rectangle::calculerAire() const {
     return (getMaxX()-getMinX())*(getMaxY()-getMinY());
 }
 
-void Rectangle::preparerPixel(Plan &plan) {
+void Formes::Rectangle::preparerPixel(Plan &plan) {
     Vecteur2D omega = plan.getOmega();
 
     pointHautGauchePixel = plan.getMatrice() * pointHautGauche + omega;

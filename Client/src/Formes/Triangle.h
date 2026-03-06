@@ -5,7 +5,6 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include <bits/ranges_algo.h>
 #include <iostream>
 
 #include "Forme.h"

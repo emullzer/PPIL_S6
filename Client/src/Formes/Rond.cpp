@@ -27,6 +27,7 @@ void Rond::preparerPixel( Plan &plan) {
     Vecteur2D omega = plan.getOmega();
 
     positionPixel = plan.getMatrice()* position +omega;
+    std::cout << positionPixel << std::endl;
     rayonPixel = rayon * plan.getLambda();
 
 }

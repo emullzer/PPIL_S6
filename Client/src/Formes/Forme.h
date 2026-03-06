@@ -28,7 +28,7 @@ public:
 
     virtual void preparerPixel(Plan &plan) = 0;
 };
-int Forme::auto_id = 1;
+
 
 
 #endif //FORME_H

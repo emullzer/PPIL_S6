@@ -4,3 +4,4 @@
 
 #include "Forme.h"
 
+int Forme::auto_id = 1;

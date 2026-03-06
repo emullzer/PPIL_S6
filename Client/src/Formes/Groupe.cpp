@@ -28,3 +28,6 @@ void Groupe::dessiner() const {
 double Groupe::calculerAire() const {
     return 0;
 }
+
+void Groupe::preparerPixel(Plan& plan) {
+    }
