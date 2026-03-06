@@ -30,6 +30,23 @@ public:
     void dessiner() const override;
     double calculerAire() const override ;
 
+   /** double getMaxY() const override {
+        return position.getY()+rayon;
+    }
+    double getMaxX() const override{
+        return position.getX()+rayon;
+    }
+    double getMinY() const override {
+        return position.getY()-rayon;
+    }
+    double getMinX() const override {
+        return position.getX()-rayon;
+    }
+
+    void preparerPixel(const Plan &plan) const override;
+    **/
+
+
 };
 
 

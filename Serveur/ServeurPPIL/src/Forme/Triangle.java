@@ -26,7 +26,7 @@ public class Triangle extends Forme{
         triangle.lineTo(x3,y3);
         triangle.closePath();
 
-        g.fill(triangle);
+        g.draw(triangle);
     }
     
 }

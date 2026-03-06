@@ -27,6 +27,21 @@ public:
     void dessiner() const override;
     explicit operator std::string() const override;
     double calculerAire() const override;
+
+    double getMaxY() const override {
+        return pointHautGauche.getY();
+    }
+    double getMaxX() const override{
+        return pointBasDroit.getX();
+    }
+    double getMinY() const override {
+        return pointBasDroit.getY();
+    }
+    double getMinX() const override {
+        return pointHautGauche.getX();
+    }
+
+    void preparerPixel(const Plan &plan) const override;
 };
 
 

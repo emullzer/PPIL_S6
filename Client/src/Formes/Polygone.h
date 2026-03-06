@@ -36,6 +36,37 @@ class Polygone : public Forme {
     void dessiner() const override;
     double calculerAire() const override;
 
+    double getMaxY() const override {
+        double max = points[0].getY();
+        for(auto point : points) {
+            max = std::max(max, point.getY());
+        }
+        return max;
+    }
+    double getMaxX() const override{
+        double max = points[0].getX();
+        for(auto point : points) {
+            max = std::max(max, point.getX());
+        }
+        return max;
+    }
+    double getMinY() const override {
+        double min = points[0].getY();
+        for(auto point : points) {
+            min = std::min(min, point.getY());
+        }
+        return min;
+    }
+    double getMinX() const override {
+        double min = points[0].getX();
+        for(auto point : points) {
+            min = std::min(min, point.getX());
+        }
+        return min;
+    }
+
+    void preparerPixel(Plan &plan) const override;
+
 };
 
 

@@ -22,3 +22,15 @@ void Rond::dessiner() const { //Je pense ici il faudra mettre le accept(patternv
 double Rond::calculerAire() const {
     return rayon *  std::numbers::pi * std::numbers::pi;
 }
+
+void Rond::preparerPixel( Plan &plan) {
+    Matrice22 matrice = plan.getMatrice();
+    //calcul de a et b; omega = c' - L * C
+    Vecteur2D omega = Vecteur2D(plan.getLPixel()/2,plan.getHPixel()/2) -
+        (plan.getMatrice()*Vecteur2D(plan.getLMonde()/2,plan.getHMonde()/2));
+
+    positionPixel = plan.getMatrice()* position +omega;
+    rayonPixel = rayon * plan.getLambda();
+
+}
+

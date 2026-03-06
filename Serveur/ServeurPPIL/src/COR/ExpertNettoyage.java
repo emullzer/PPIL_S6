@@ -17,8 +17,7 @@ public class ExpertNettoyage extends Expert{
             return null;
         }
 
-
-            formes.clear();
-            return "Nettoyage effectue";
+        formes.clear();
+        return "Nettoyage effectue";
     }
 }

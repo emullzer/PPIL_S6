@@ -10,13 +10,10 @@ void Plan::calculerMatrice(){
     double lambda1 = hPixel / hMonde;
     double lambda2 = lPixel / lMonde;
 
-    double lambda = std::min(lambda1, lambda2);
+    lambda = std::min(lambda1, lambda2);
 
 
     matrice = Matrice22(lambda,0,0,lambda*-1);
   }
 
-Vecteur2D Plan::tranformerPixels(Vecteur2D point) {
-
-}
 

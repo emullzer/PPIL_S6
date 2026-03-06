@@ -5,6 +5,8 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
+#include <bits/ranges_algo.h>
+
 #include "Forme.h"
 #include "../Calculs/Vecteur2D.h"
 
@@ -25,6 +27,21 @@ class Triangle: public Forme{
     void dessiner() const override;
     explicit operator std::string() const override;
     double calculerAire() const override;
+
+    double getMaxY() const override {
+        return std::max(sommet1.getY(), sommet2.getY(),sommet3.getY());
+    }
+    double getMaxX() const override{
+        return std::max(sommet1.getX(), sommet2.getX(),sommet3.getX());
+    }
+    double getMinY() const override {
+        return std::min(sommet1.getY(), sommet2.getY(),sommet3.getY());
+    }
+    double getMinX() const override {
+        return std::min(sommet1.getX(), sommet2.getX(),sommet3.getX());
+    }
+
+    void preparerPixel(Plan &plan) const override;
 
 };
 

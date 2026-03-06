@@ -16,7 +16,7 @@ public class Rond extends Forme{
     @Override
     public void dessiner(Graphics2D g) {
         g.setColor(this.color);
-        g.fill(new Ellipse2D.Double(xCentre,yCentre,rayon,rayon));
+        g.draw(new Ellipse2D.Double(xCentre,yCentre,rayon,rayon));
 
     }
 

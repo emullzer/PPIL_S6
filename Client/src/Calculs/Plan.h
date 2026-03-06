@@ -13,6 +13,7 @@ class Plan {
     Vecteur2D origine; // egal a minX, min Y
     double hMonde, lMonde; // longeur = maxX - minX et pareil pour hauteur
     int hPixel=600, lPixel=800;
+    double lambda =1;
 
     Matrice22 matrice= Matrice22(0,0,0,0);
 
@@ -31,8 +32,28 @@ class Plan {
         void setLMonde(const double &lMonde) {
             this->lMonde = lMonde;
         }
-        Vecteur2D tranformerPixels(Vecteur2D point);
+        Matrice22 getMatrice() {
+            return matrice;
+        }
+    double getLambda() const {
+            return lambda;
+        }
 
+    [[nodiscard]] double getHMonde() const {
+        return hMonde;
+    }
+
+    [[nodiscard]] double getLMonde() const {
+        return lMonde;
+    }
+
+    [[nodiscard]] int getHPixel() const {
+        return hPixel;
+    }
+
+    [[nodiscard]] int getLPixel() const {
+        return lPixel;
+    }
 };
 
 
