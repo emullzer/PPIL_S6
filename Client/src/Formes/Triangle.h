@@ -10,6 +10,7 @@
 
 class Triangle: public Forme{
     Vecteur2D sommet1, sommet2, sommet3;
+    Vecteur2D sommet1Pixel, sommet2Pixel, sommet3Pixel;
 
     public:
     Triangle(double x1, double y1, double x2, double y2, double x3, double y3,const std::string& color)

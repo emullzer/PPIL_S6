@@ -15,3 +15,8 @@ void Plan::calculerMatrice(){
 
     matrice = Matrice22(lambda,0,0,lambda*-1);
   }
+
+Vecteur2D Plan::tranformerPixels(Vecteur2D point) {
+
+}
+

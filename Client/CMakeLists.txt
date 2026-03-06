@@ -27,5 +27,8 @@ add_executable(PPIL_EXO
         src/Formes/Polygone.h
         src/Calculs/Plan.h
         src/Calculs/Plan.h
-        src/Calculs/Matrice22.h)
+        src/Calculs/Matrice22.h
+        src/Calculs/FormesManager.h
+        src/Calculs/FormesManager.cpp
+)
 target_link_libraries(PPIL_EXO ws2_32)

@@ -6,6 +6,7 @@
 #define FORME_H
 #include <iostream>
 #include <string>
+#include "../Calculs/Plan.h"
 
 
 class Forme {
@@ -24,6 +25,8 @@ public:
     virtual double getMinY()const = 0;
     virtual double getMaxX()const = 0;
     virtual double getMaxY()const = 0; //TODO implementer dans toutes les formes, en fonction de leur taille
+
+    virtual void preparerPixel(const Plan& plan) const = 0;
 };
 int Forme::auto_id = 1;
 

@@ -10,7 +10,7 @@
 
 Rond::operator std::string() const {
     std::ostringstream o;
-    o << "Rond[" << position << "," << rayon << "," << color << "]";
+    o << "Rond[" << positionPixel << "," << rayonPixel << "," << color << "]";
     return o.str();
 }
 

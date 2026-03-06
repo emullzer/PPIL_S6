@@ -60,6 +60,13 @@ double norme()const //norme
 	return sqrt(this->norme2());
 }
 
+double getX()const {
+			return x;
+		}
+	double getY()const {
+			return y;
+		}
+
 };
 
 

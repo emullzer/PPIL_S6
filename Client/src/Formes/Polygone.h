@@ -14,6 +14,7 @@
 class Polygone : public Forme {
     protected:
         std::vector<Vecteur2D> points;
+        std::vector<Vecteur2D> pointsPixel;
     public:
         explicit Polygone(const std::string& color) {
             points.clear();

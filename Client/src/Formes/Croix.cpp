@@ -8,7 +8,7 @@
 
 Croix::operator std::string() const {
     std::ostringstream o;
-    o << "Croix[" << position << "," << longueur <<","<< color <<"]";
+    o << "Croix[" << positionPixel << "," << longueurPixel <<","<< color <<"]";
     return o.str();
 }
 

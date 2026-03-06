@@ -6,20 +6,34 @@
 #define FORMESMANAGER_H
 #include "Plan.h"
 #include <iostream>
+#include <optional>
 #include <vector>
 #include "../Formes/Forme.h"
 #include "Vecteur2D.h"
+#include "../Connexion/ConnexionServeur.h"
 
 class FormesManager {
     Plan plan;
     std::vector<Forme*> VectorFormes;
+    std::optional<Vecteur2D> rectangleHG, rectangleBD;
+
+
     public:
         FormesManager():plan(Vecteur2D(0,0),10,10),VectorFormes() {}
 
         void ajouterForme(Forme *forme);
-    //TODO: Creer une Classe qui stocke les formes, a achaque ajout supprime les formes et les renvoie avec la bonne taille
-    //TODO à implementer : Calucler le rectangle qui entoure les formes
-    //TODO: mettre dans les formes les fonction getxmax, getymax,getxmin,getymin pour ensuite les utiliser pour la bounding box.
+        void nettoyer() {
+            ConnexionServeur::getInstance().envoyerRequete("Nettoyer[]");
+            //9&2r$6X82i
+        }
+
+    void dessinerFormes();
+
+    /**
+     * Fonction qui mets à jour les deux Vecteur2D rectangleHG et rectangleBD, qui permet de trouve le rectangle encadrant les formes, pour permettre d'afficher les formes en plus grand sur le serveur.
+     */
+    void updateBordsFormes(Forme* forme);
+
 
 };
 

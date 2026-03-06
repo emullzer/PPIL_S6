@@ -12,7 +12,9 @@
 
 class Rond: public Forme {
     double rayon;
+    double rayonPixel;
     Vecteur2D position;
+    Vecteur2D positionPixel;
 
     public:
     Rond(double x, double y, double r,const std::string& color) {

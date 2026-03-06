@@ -8,7 +8,7 @@
 Polygone::operator std::string() const {
     std::ostringstream o;
     o << "Polygone[";
-    for( auto const& point : points ) {
+    for( auto const& point : pointsPixel ) {
         o << point<<",";
     }
     o << "]";

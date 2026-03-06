@@ -12,7 +12,9 @@
 class Rectangle: public Forme {
 
     Vecteur2D pointHautGauche;
+    Vecteur2D pointHautGauchePixel;
     Vecteur2D pointBasDroit;
+    Vecteur2D pointBasDroitPixel;
 
 public:
     Rectangle(double x1, double y1,double x2, double y2, const std::string& color) {

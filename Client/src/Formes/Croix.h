@@ -13,7 +13,9 @@ class Croix: public Forme {
     protected:
 
     Vecteur2D position;
+    Vecteur2D positionPixel;
     double longueur;
+    double longueurPixel;
 
 
 public:

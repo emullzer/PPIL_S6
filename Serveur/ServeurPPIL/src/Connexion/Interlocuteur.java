@@ -5,10 +5,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
 
-import COR.Expert;
-import COR.ExpertCroix;
-import COR.ExpertRond;
-import COR.ExpertTriangle;
+import COR.*;
 import Forme.Forme;
 import dessin.*;
 
@@ -68,5 +65,6 @@ public class Interlocuteur extends Thread {
         chaineCOR = new ExpertRond(formesADessiner,chaineCOR);
         chaineCOR = new ExpertCroix(formesADessiner,chaineCOR);
         chaineCOR = new ExpertTriangle(formesADessiner,chaineCOR);
+        chaineCOR = new ExpertNettoyage(formesADessiner,chaineCOR);
     }
 }
