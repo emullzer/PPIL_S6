@@ -18,7 +18,7 @@ void FormesManager::ajouterForme(Forme *forme) {
         plan.setHMonde((rectangleBD->getX()-rectangleHG->getX()));
         plan.setLMonde((rectangleHG->getY()-rectangleBD->getY()));
         plan.calculerMatrice();
-        //nettoyer();
+        nettoyer();
         dessinerFormes();
 
 }
@@ -26,8 +26,8 @@ void FormesManager::ajouterForme(Forme *forme) {
 void FormesManager::updateBordsFormes(Forme* forme) {
     double minX = std::min(forme->getMinX(),rectangleHG->getX());
     double minY = std::min(forme->getMinY(),rectangleBD->getY());
-    double maxX = std::min(forme->getMaxX(),rectangleBD->getX());
-    double maxY = std::min(forme->getMaxY(),rectangleHG->getY());
+    double maxX = std::max(forme->getMaxX(),rectangleBD->getX());
+    double maxY = std::max(forme->getMaxY(),rectangleHG->getY());
 
 
     rectangleHG = Vecteur2D(minX,maxY);

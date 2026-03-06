@@ -14,7 +14,7 @@ public class ExpertRectangle extends Expert{
 
     public String afficher2(String text) {
         String type = text.split("\\[")[0];
-        if (!type.equals("Croix")) {
+        if (!type.equals("Rectangle")) {
             return null;
         }
 
@@ -22,11 +22,11 @@ public class ExpertRectangle extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[4]);
 
-            formes.add(new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3])));
-            return "Croix ajoute.";
+            formes.add(new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color));
+            return "Rectangle ajoute.";
         }catch (NumberFormatException e)
         {
-            return "Probleme dans les valeurs de Croix.";
+            return "Probleme dans les valeurs de Rectangle.";
         }
     }
 }

@@ -24,7 +24,6 @@ class FormesManager {
         void ajouterForme(Forme *forme);
         void nettoyer() {
             ConnexionServeur::getInstance().envoyerRequete("Nettoyer[]\n");
-            //9&2r$6X82i
         }
 
     void dessinerFormes();

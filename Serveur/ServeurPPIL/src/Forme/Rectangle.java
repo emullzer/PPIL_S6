@@ -7,15 +7,22 @@ public class Rectangle extends Forme {
 
     double xHG, yHG, xBD, yBD;
 
-    public Rectangle(double xHG, double yHG, double xBD, double yBD) {
+    public Rectangle(double xHG, double yHG, double xBD, double yBD,Color color) {
         this.xHG = xHG;
         this.yHG = yHG;
         this.xBD = xBD;
         this.yBD = yBD;
+        this.color = color;
     }
 
     @Override
-    public void dessiner(Graphics2D g) {
-        g.draw(new Rectangle2D.Double(xHG, yHG, xBD, yBD));
+    public void dessiner(Graphics2D g)
+    {
+        g.setColor(this.color);
+        double longueur = Math.abs(xHG - xBD);
+        double hauteur = Math.abs(yHG - yBD);
+        double xmin = Math.min(xHG, xBD);
+        double ymin = Math.min(yHG, yBD);
+        g.fill(new Rectangle2D.Double(xmin,ymin, longueur, hauteur));
     }
 }

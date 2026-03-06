@@ -24,7 +24,7 @@ public  class Dessin {
                 frame.setResizable(false);
                 frame.setVisible(true);
                 frame.createBufferStrategy(2);
-                Thread.sleep(150);
+                Thread.sleep(300);
 
                 bufferStrategy = frame.getBufferStrategy();
             }
@@ -62,8 +62,5 @@ public  class Dessin {
         g2.dispose();
     }
 
-    public void changerTailleCanvas(int longueur, int hauteur)
-    {
 
-    }
 }

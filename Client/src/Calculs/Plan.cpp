@@ -10,7 +10,7 @@ void Plan::calculerMatrice(){
     double lambda1 = hPixel / hMonde;
     double lambda2 = lPixel / lMonde;
 
-    double marge = 1.2;
+    double marge = 1.1;
 
     lambda = std::min(lambda1, lambda2)/marge;
 

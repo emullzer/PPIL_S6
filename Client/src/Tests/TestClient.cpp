@@ -26,6 +26,10 @@ int main() {
         f2 = new Formes::Rectangle(-3,2,-1,1,"green");
 
         fm->ajouterForme(f2);
+        std::cin >> c;
+        f2 = new Rond(-8,6,2,"cyan");
+
+        fm->ajouterForme(f2);
 
     }catch(std::exception& e) {
         std::cout << e.what() << std::endl;
