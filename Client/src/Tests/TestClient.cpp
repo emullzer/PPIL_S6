@@ -13,32 +13,53 @@
 
 
 int main() {
-    char ch;
+    std::string ch;
     try {
-        Forme *f1, *f2;
-        FormesManager *fm = new FormesManager();
-        char c;
+        std::cout << "1 pour test formes + homothetie et tt pour Rond et triangle";
+        std::cin >> ch;
+        int val = std::stoi(ch);
+        switch (val) {
+            case 1:{
+                Forme *f1, *f2;
+                FormesManager *fm = new FormesManager();
+                char c;
 
-        f1 = new Rond(2,2,1,"red");
-        fm->ajouterForme(f1);
-        std::cin >> c;
-        f2 = new Formes::Rectangle(4,3,6,1,"green");
+                f1 = new Rond(2,2,1,"red");
+                fm->ajouterForme(f1);
+                std::cin >> c;
+                f2 = new Formes::Rectangle(8,3,6,1,"green");
 
-        fm->ajouterForme(f2);
-        std::cin >> c;
-        f2 = new Triangle(4,3.1,5,5.1,6,3.1,"blue");
+                fm->ajouterForme(f2);
+                std::cin >> c;
+                f2 = new Triangle(4,3.1,5,5.1,6,3.1,"blue");
 
-        fm->ajouterForme(f2);
-        std::cin >> c;
+                fm->ajouterForme(f2);
+                std::cin >> c;
 
-        FormesManager *fm2 = new FormesManager();
-        fm2->ajouterForme(f1);
-        fm2->ajouterForme(f2);
-        std::cin >> c;
-        f2->translation(Vecteur2D(3,-3));
-        f1->homothetie(2,Vecteur2D(2,2));
-        f2->rotation(1.57,Vecteur2D(5,5.1));
-        fm2->updateFormes();
+                FormesManager *fm2 = new FormesManager();
+                fm2->ajouterForme(f1);
+                fm2->ajouterForme(f2);
+                std::cin >> c;
+                f2->translation(Vecteur2D(3,-3));
+                f1->homothetie(2,Vecteur2D(2,2));
+                f2->rotation(1.57,Vecteur2D(5,5.1));
+                fm2->updateFormes();
+                break;
+                }
+
+            case 2:{
+                auto* fm = new FormesManager();
+                Forme* f1 = new Formes::Rectangle(4,3,6,1,"green");
+                Forme* f2 = new Rond(-2,0.1,1.4,"black");
+                fm->ajouterForme(f1);
+                fm->ajouterForme(f2);
+                std::cin >> ch;
+                f1->rotation(1.1,Vecteur2D(1,3));
+                fm->updateFormes();
+                break;
+                }
+
+        }
 
     }catch(std::exception& e) {
         std::cout << e.what() << std::endl;

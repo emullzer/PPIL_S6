@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.29)
-project(PPIL_EXO)
+project(PPIL_CLIENT)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(PPIL_EXO
+add_executable(PPIL_CLIENT
         src/Formes/Forme.cpp
         src/Formes/Forme.h
         src/Formes/Segment.cpp
@@ -37,5 +37,9 @@ add_executable(PPIL_EXO
         src/Visiteur/VisiteurDessinJava.cpp
         src/Visiteur/VisiteurSauvegarde.h
         src/Visiteur/VisiteurSauvegarde.cpp
+        src/COR/Expert.h
+        src/COR/ExpertCharger.h
+        src/COR/ExpertCharger.cpp
+
 )
-target_link_libraries(PPIL_EXO ws2_32)
+target_link_libraries(PPIL_CLIENT ws2_32)

@@ -68,8 +68,8 @@ void FormesManager::updateFormes() {
 void FormesManager::updatePlan() {
     plan.updateMatrice(rectangleBD.value(),rectangleHG.value());
 
-    plan.setHMonde((rectangleBD->getX()-rectangleHG->getX()));
-    plan.setLMonde((rectangleHG->getY()-rectangleBD->getY()));
+    plan.setLMonde((rectangleBD->getX()-rectangleHG->getX()));
+    plan.setHMonde((rectangleHG->getY()-rectangleBD->getY()));
     plan.calculerMatrice();
 }
 
