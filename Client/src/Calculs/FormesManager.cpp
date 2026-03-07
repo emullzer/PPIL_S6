@@ -13,11 +13,8 @@ void FormesManager::ajouterForme(Forme *forme) {
     }else {
         updateBordsFormes(forme);
     }
-        plan.updateMatrice(rectangleBD.value(),rectangleHG.value());
+        updatePlan();
 
-        plan.setHMonde((rectangleBD->getX()-rectangleHG->getX()));
-        plan.setLMonde((rectangleHG->getY()-rectangleBD->getY()));
-        plan.calculerMatrice();
         nettoyer();
         dessinerFormes();
 
@@ -34,11 +31,45 @@ void FormesManager::updateBordsFormes(Forme* forme) {
     rectangleBD = Vecteur2D(maxX,minY);
 }
 
+void FormesManager::updateBordsFormes(){
+    if (VectorFormes.empty()) return;
+    //On initialise les coins du rectangle avec les valeurs du premier element
+    double minX = VectorFormes[0]->getMinX();
+    double minY = VectorFormes[0]->getMinY();
+    double maxX = VectorFormes[0]->getMaxX();
+    double maxY = VectorFormes[0]->getMaxY();
+    rectangleHG = Vecteur2D(minX,maxY);
+    rectangleBD = Vecteur2D(maxX,minY);
+
+    //Puis on appelle la fonction qui compare la forme avec RectangleHG/BD
+    for (auto forme : VectorFormes) {
+        updateBordsFormes(forme);
+    }
+}
+
 void FormesManager::dessinerFormes() {
     for(auto forme : VectorFormes) {
         forme->preparerPixel(plan);
         forme->dessiner();
     }
 }
+
+void FormesManager::updateFormes() {
+    updateBordsFormes();
+    updatePlan();
+
+    nettoyer();
+    dessinerFormes();
+}
+
+void FormesManager::updatePlan() {
+    plan.updateMatrice(rectangleBD.value(),rectangleHG.value());
+
+    plan.setHMonde((rectangleBD->getX()-rectangleHG->getX()));
+    plan.setLMonde((rectangleHG->getY()-rectangleBD->getY()));
+    plan.calculerMatrice();
+}
+
+
 
 

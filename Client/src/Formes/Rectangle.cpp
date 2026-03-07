@@ -12,7 +12,7 @@ void Formes::Rectangle::dessiner() const {
 
 Formes::Rectangle::operator std::string() const {
     std::ostringstream o;
-    o << "Rectangle[" << pointHautGauchePixel << "," << pointBasDroitPixel <<"," << color << "," << id << "]";
+    o << "Rectangle[" << p1Pixel << "," << p2Pixel << "," << p3Pixel << "," << p4Pixel <<"," << color << "," << id << "]";
     return o.str();
 }
 
@@ -23,6 +23,8 @@ double Formes::Rectangle::calculerAire() const {
 void Formes::Rectangle::preparerPixel(Plan &plan) {
     Vecteur2D omega = plan.getOmega();
 
-    pointHautGauchePixel = plan.getMatrice() * pointHautGauche + omega;
-    pointBasDroitPixel = plan.getMatrice() * pointBasDroit + omega;
+    p1Pixel = plan.getMatrice() * p1 + omega;
+    p2Pixel = plan.getMatrice() * p2 + omega;
+    p3Pixel = plan.getMatrice() * p3 + omega;
+    p4Pixel = plan.getMatrice() * p4 + omega;
 }

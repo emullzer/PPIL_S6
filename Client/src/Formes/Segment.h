@@ -61,12 +61,4 @@ class Segment: public Forme {
 
     };
 
-
-
-#endif //CROIX_H
-
-};
-
-
-
 #endif //SEGMENT_H

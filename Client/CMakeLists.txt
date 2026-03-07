@@ -15,7 +15,6 @@ add_executable(PPIL_EXO
         src/Connexion/ConnexionServeur.cpp
         src/Connexion/ConnexionServeur.h
         src/Tests/TestClient.cpp
-        src/Tests/TestClient.h
         src/Calculs/Vecteur2D.h
         src/Calculs/Vecteur2D.cpp
         src/Calculs/Matrice22.h

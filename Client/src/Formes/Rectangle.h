@@ -25,6 +25,7 @@ namespace Formes {
 
         void dessiner() const override;
         explicit operator std::string() const override;
+        double calculerAire() const override;
 
 
         void translation(const Vecteur2D& v) override {

@@ -1,5 +1,5 @@
 import Connexion.Serveur;
-import Forme.Croix;
+import Forme.Segment;
 import Forme.Forme;
 import Forme.Rond;
 import dessin.Dessin;

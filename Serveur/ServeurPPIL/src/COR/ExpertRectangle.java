@@ -20,9 +20,10 @@ public class ExpertRectangle extends Expert{
 
         try {
             String[] valeurs = getValeurs(text);
-            Color color = TraducteurCouleur.getCouleur(valeurs[4]);
+            Color color = TraducteurCouleur.getCouleur(valeurs[8]);
 
-            formes.add(new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color,Integer.parseInt(valeurs[5])));
+            formes.add(new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),
+                    Double.parseDouble(valeurs[4]),Double.parseDouble(valeurs[5]),Double.parseDouble(valeurs[6]),Double.parseDouble(valeurs[7]),color,Integer.parseInt(valeurs[9])));
             return "Rectangle ajoute.";
         }catch (NumberFormatException e)
         {

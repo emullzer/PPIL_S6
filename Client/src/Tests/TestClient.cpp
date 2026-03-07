@@ -2,10 +2,9 @@
 // Created by mulle1149u on 07/02/2026.
 //
 
-#include "TestClient.h"
 
 #include "../Calculs/FormesManager.h"
-#include "../Formes/Croix.h"
+#include "../Formes/Segment.h"
 #include "../Formes/Forme.h"
 #include "../Formes/Rond.h"
 #include "../Formes/Triangle.h"
@@ -30,6 +29,16 @@ int main() {
         f2 = new Triangle(4,3.1,5,5.1,6,3.1,"blue");
 
         fm->ajouterForme(f2);
+        std::cin >> c;
+
+        FormesManager *fm2 = new FormesManager();
+        fm2->ajouterForme(f1);
+        fm2->ajouterForme(f2);
+        std::cin >> c;
+        f2->translation(Vecteur2D(3,-3));
+        f1->homothetie(2,Vecteur2D(2,2));
+        f2->rotation(1.57,Vecteur2D(5,5.1));
+        fm2->updateFormes();
 
     }catch(std::exception& e) {
         std::cout << e.what() << std::endl;
