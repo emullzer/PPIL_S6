@@ -60,6 +60,24 @@ public:
     }
     void preparerPixel(Plan &plan) override;
 
+    void translation(const Vecteur2D& v) override {
+        for( auto forme: formesGroupe ) {
+            forme->translation(v);
+        }
+    }
+
+    void homothetie(double rapport, const Vecteur2D& centre) override {
+        for( auto forme: formesGroupe ) {
+            forme->homothetie(rapport, centre);
+        }
+    }
+
+    void rotation(double angle, const Vecteur2D& pointPivot) override {
+        for( auto forme: formesGroupe ) {
+            forme->rotation(angle, pointPivot);
+        }
+    }
+
 };
 
 
