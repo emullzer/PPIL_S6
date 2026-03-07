@@ -41,6 +41,22 @@ class Segment: public Forme {
 
          void preparerPixel(Plan &plan) override;
 
+        void translation(const Vecteur2D& v) override {
+            A = A + v;
+            B = B + v;
+        }
+
+        void homothetie(double rapport, const Vecteur2D& centre) override {
+            A = centre + (A - centre) * rapport;
+            B = centre + (B - centre) * rapport;
+        }
+
+        void rotation(double angle, const Vecteur2D& centre) override {
+            Matrice22 matRotation = Matrice22::creeRotation(angle);
+            A = centre + matRotation * (A - centre);
+            B = centre + matRotation * (B - centre);
+        }
+
 
 
     };

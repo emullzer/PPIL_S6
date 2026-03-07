@@ -27,6 +27,10 @@ public:
     virtual double getMaxY()const = 0; //TODO implementer dans toutes les formes, en fonction de leur taille
 
     virtual void preparerPixel(Plan &plan) = 0;
+
+    virtual void rotation(double angle, const Vecteur2D& centre) = 0;
+    virtual void translation(const Vecteur2D& v) = 0;
+    virtual void homothetie(double rapport, const Vecteur2D& centre) = 0;
 };
 
 

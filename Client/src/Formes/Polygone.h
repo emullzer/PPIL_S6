@@ -67,6 +67,25 @@ class Polygone : public Forme {
 
     void preparerPixel(Plan &plan) override;
 
+    void translation(const Vecteur2D& v) override {
+        for (auto& point : points) {
+            point = point + v;
+        }
+    }
+
+    void homothetie(double rapport, const Vecteur2D& centre) override {
+        for (auto& point : points) {
+            point = centre + (point - centre) * rapport;
+        }
+    }
+
+    void rotation(double angle, const Vecteur2D& centre) override {
+        Matrice22 matRotation = Matrice22::creeRotation(angle);
+        for (auto& point : points) {
+            point = centre + matRotation * (point - centre);
+        }
+    }
+
 };
 
 

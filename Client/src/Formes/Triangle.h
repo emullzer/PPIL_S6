@@ -43,6 +43,25 @@ class Triangle: public Forme{
 
     void preparerPixel(Plan &plan) override;
 
+    void translation(const Vecteur2D& v) override {
+        sommet1 = sommet1 + v;
+        sommet2 = sommet2 + v;
+        sommet3 = sommet3 + v;
+    }
+
+    void homothetie(double rapport, const Vecteur2D& centre) override {
+        sommet1 = centre + (sommet1 - centre) * rapport;
+        sommet2 = centre + (sommet2 - centre) * rapport;
+        sommet3 = centre + (sommet3 - centre) * rapport;
+    }
+
+    void rotation(double angle, const Vecteur2D& centre) override {
+        Matrice22 mat = Matrice22::creeRotation(angle);
+        sommet1 = centre + mat * (sommet1 - centre);
+        sommet2 = centre + mat * (sommet2 - centre);
+        sommet3 = centre + mat * (sommet3 - centre);
+    }
+
 };
 
 

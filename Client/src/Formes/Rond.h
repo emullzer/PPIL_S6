@@ -43,6 +43,27 @@ class Rond: public Forme {
 
     void preparerPixel(Plan &plan) override;
 
+    void translation(const Vecteur2D& v) override {
+        // On déplace le point central du rond
+        this->position = this->position + v;
+    }
+
+    void homothetie(double rapport, const Vecteur2D& centre) override {
+        // 1. On déplace le centre par rapport au point pivot
+        this->position = centre + (this->position - centre) * rapport;
+
+        // 2. On multiplie le rayon par le rapport (en valeur absolue pour éviter un rayon négatif)
+        this->rayon = this->rayon * std::abs(rapport);
+    }
+
+    void rotation(double angle, const Vecteur2D& pointPivot) override {
+        // On crée la matrice de rotation
+        Matrice22 mat = Matrice22::creeRotation(angle);
+
+        // On calcule la nouvelle position du centre (Pivot -> Origine -> Rotation -> Pivot)
+        this->position = pointPivot + mat * (this->position - pointPivot);
+    }
+
 };
 
 
