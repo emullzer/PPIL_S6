@@ -6,11 +6,12 @@ import java.awt.geom.Ellipse2D;
 public class Rond extends Forme{
     double xCentre, yCentre,rayon;
 
-    public Rond(double xCentre, double yCentre, double rayon,Color color) {
+    public Rond(double xCentre, double yCentre, double rayon,Color color,int id) {
         this.xCentre = xCentre;
         this.yCentre = yCentre;
         this.rayon = rayon;
         this.color = color;
+        this.id = id;
     }
 
     @Override

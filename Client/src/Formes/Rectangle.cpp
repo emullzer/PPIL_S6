@@ -12,7 +12,7 @@ void Formes::Rectangle::dessiner() const {
 
 Formes::Rectangle::operator std::string() const {
     std::ostringstream o;
-    o << "Rectangle[" << pointHautGauchePixel << "," << pointBasDroitPixel <<"," << color << "]";
+    o << "Rectangle[" << pointHautGauchePixel << "," << pointBasDroitPixel <<"," << color << "," << id << "]";
     return o.str();
 }
 

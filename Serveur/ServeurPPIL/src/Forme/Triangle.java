@@ -6,7 +6,7 @@ import java.awt.geom.Path2D;
 public class Triangle extends Forme{
     double x1, y1, x2, y2, x3, y3;
 
-    public Triangle(double x1, double y1, double x2, double y2, double x3, double y3, Color color) {
+    public Triangle(double x1, double y1, double x2, double y2, double x3, double y3, Color color,int id) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -14,6 +14,7 @@ public class Triangle extends Forme{
         this.x3 = x3;
         this.y3 = y3;
         this.color = color;
+        this.id = id;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class Triangle extends Forme{
         triangle.lineTo(x3,y3);
         triangle.closePath();
 
-        g.draw(triangle);
+        g.fill(triangle);
     }
     
 }

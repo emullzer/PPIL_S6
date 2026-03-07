@@ -7,12 +7,13 @@ public class Rectangle extends Forme {
 
     double xHG, yHG, xBD, yBD;
 
-    public Rectangle(double xHG, double yHG, double xBD, double yBD,Color color) {
+    public Rectangle(double xHG, double yHG, double xBD, double yBD,Color color, int id) {
         this.xHG = xHG;
         this.yHG = yHG;
         this.xBD = xBD;
         this.yBD = yBD;
         this.color = color;
+        this.id = id;
     }
 
     @Override

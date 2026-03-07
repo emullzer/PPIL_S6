@@ -63,7 +63,7 @@ public class Interlocuteur extends Thread {
 
     private void setupCOR(){
         chaineCOR = new ExpertRond(formesADessiner,chaineCOR);
-        chaineCOR = new ExpertCroix(formesADessiner,chaineCOR);
+        chaineCOR = new ExpertSegment(formesADessiner,chaineCOR);
         chaineCOR = new ExpertTriangle(formesADessiner,chaineCOR);
         chaineCOR = new ExpertNettoyage(formesADessiner,chaineCOR);
         chaineCOR = new ExpertRectangle(formesADessiner,chaineCOR);

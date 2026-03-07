@@ -20,7 +20,7 @@ public class ExpertTriangle extends Expert{
         String[] valeurs = getValeurs(text);
         Color color = TraducteurCouleur.getCouleur(valeurs[6]);
 
-        Triangle triangle = new Triangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),Double.parseDouble(valeurs[4]),Double.parseDouble(valeurs[5]),color);
+        Triangle triangle = new Triangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),Double.parseDouble(valeurs[4]),Double.parseDouble(valeurs[5]),color,Integer.parseInt(valeurs[7]));
         formes.add(triangle);
         return "Triangle dessine.";
     }

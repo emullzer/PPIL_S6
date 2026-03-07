@@ -21,7 +21,7 @@ public class ExpertRond extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[3]);
 
-            formes.add(new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color));
+            formes.add(new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color,Integer.parseInt(valeurs[4])));
             return "Rond ajoute";
         }catch (NumberFormatException e){
             return "Probleme avec les valeurs de Rond.";

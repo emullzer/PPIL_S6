@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(PPIL_EXO
         src/Formes/Forme.cpp
         src/Formes/Forme.h
-        src/Formes/Croix.cpp
-        src/Formes/Croix.h
+        src/Formes/Segment.cpp
+        src/Formes/Segment.h
         src/Formes/Rond.cpp
         src/Formes/Rond.h
         src/Formes/Rectangle.cpp

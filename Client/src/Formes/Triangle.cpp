@@ -9,7 +9,7 @@
 
 Triangle::operator std::string() const {
     std::ostringstream o;
-    o << "Triangle[" << sommet1Pixel << "," << sommet2Pixel << "," << sommet3Pixel << "," << color << "]";
+    o << "Triangle[" << sommet1Pixel << "," << sommet2Pixel << "," << sommet3Pixel << "," << color << "," << id << "]";
     return o.str();
 }
 

@@ -20,14 +20,14 @@ int main() {
         FormesManager *fm = new FormesManager();
         char c;
 
-        f1 = new Rond(1.3,4,2,"red");
+        f1 = new Rond(2,2,1,"red");
         fm->ajouterForme(f1);
         std::cin >> c;
-        f2 = new Formes::Rectangle(-3,2,-1,1,"green");
+        f2 = new Formes::Rectangle(4,3,6,1,"green");
 
         fm->ajouterForme(f2);
         std::cin >> c;
-        f2 = new Rond(-8,6,2,"cyan");
+        f2 = new Triangle(4,3.1,5,5.1,6,3.1,"blue");
 
         fm->ajouterForme(f2);
 

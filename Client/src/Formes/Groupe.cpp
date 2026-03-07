@@ -8,9 +8,9 @@
 
 Groupe::operator std::string() const {
     std::ostringstream o;
-    o << "Groupe[";
-    for(auto const& forme : formesGroupe) {
-      o << std::string(*forme) << ";";
+    o << "Groupe[" << formesGroupePixel.size() << "," << color << "," << id << ",";
+    for(auto const& forme : formesGroupePixel) {
+      o << std::string(*forme) << ",";
     }
     std::string s = o.str();
     s.pop_back();
