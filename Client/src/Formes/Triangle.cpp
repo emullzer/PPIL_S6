@@ -4,6 +4,7 @@
 
 #include "Triangle.h"
 #include "../Connexion/ConnexionServeur.h"
+#include "../Visiteur/VisiteurDessin.h"
 #include <sstream>
 
 
@@ -14,9 +15,8 @@ Triangle::operator std::string() const {
 }
 
 
-void Triangle::dessiner() const{
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
+void Triangle::dessiner(VisiteurDessin* v) const{
+    v->visite(this);
 }
 
 double Triangle::calculerAire() const {

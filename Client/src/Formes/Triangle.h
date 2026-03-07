@@ -24,7 +24,7 @@ class Triangle: public Forme{
         id = auto_id++;
     }
 
-    void dessiner() const override;
+    void dessiner(VisiteurDessin* v) const override;
     explicit operator std::string() const override;
     double calculerAire() const override;
 

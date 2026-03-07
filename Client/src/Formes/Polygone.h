@@ -33,7 +33,7 @@ class Polygone : public Forme {
         }
 
     explicit operator std::string() const override;
-    void dessiner() const override;
+    void dessiner(VisiteurDessin* v) const override;
     double calculerAire() const override;
 
     double getMaxY() const override {

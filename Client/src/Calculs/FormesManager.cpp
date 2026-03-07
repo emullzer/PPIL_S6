@@ -3,6 +3,7 @@
 //
 
 #include "FormesManager.h"
+#include "../Visiteur/VisiteurDessinJava.h"
 
 
 void FormesManager::ajouterForme(Forme *forme) {
@@ -48,9 +49,11 @@ void FormesManager::updateBordsFormes(){
 }
 
 void FormesManager::dessinerFormes() {
+
+    auto* visiteur = new VisiteurDessinJava();
     for(auto forme : VectorFormes) {
         forme->preparerPixel(plan);
-        forme->dessiner();
+        forme->dessiner(visiteur);
     }
 }
 

@@ -4,6 +4,7 @@
 
 #include "Polygone.h"
 #include "../Connexion/ConnexionServeur.h"
+#include "../Visiteur/VisiteurDessin.h"
 
 Polygone::operator std::string() const {
     std::ostringstream o;
@@ -16,10 +17,8 @@ Polygone::operator std::string() const {
     return o.str();
 }
 
-void Polygone::dessiner() const {
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
-    //std::cout << message ; // Utilisé pour debug
+void Polygone::dessiner(VisiteurDessin* v) const {
+    v->visite(this);
 }
 
 double Polygone::calculerAire() const {

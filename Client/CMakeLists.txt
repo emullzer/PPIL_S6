@@ -31,5 +31,11 @@ add_executable(PPIL_EXO
         src/Calculs/Matrice22.h
         src/Calculs/FormesManager.h
         src/Calculs/FormesManager.cpp
+        src/Visiteur/VisiteurDessin.h
+        src/Visiteur/VisiteurDessin.cpp
+        src/Visiteur/VisiteurDessinJava.h
+        src/Visiteur/VisiteurDessinJava.cpp
+        src/Visiteur/VisiteurSauvegarde.h
+        src/Visiteur/VisiteurSauvegarde.cpp
 )
 target_link_libraries(PPIL_EXO ws2_32)

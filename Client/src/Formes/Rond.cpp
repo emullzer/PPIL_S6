@@ -5,7 +5,7 @@
 #include "Rond.h"
 #include <sstream>
 #include "../Connexion/ConnexionServeur.h"
-#include <cmath>
+#include "../Visiteur/VisiteurDessin.h"
 
 
 Rond::operator std::string() const {
@@ -14,9 +14,8 @@ Rond::operator std::string() const {
     return o.str();
 }
 
-void Rond::dessiner() const { //Je pense ici il faudra mettre le accept(patternvisitor) et donc changer les parametres
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
+void Rond::dessiner(VisiteurDessin* v) const { //Je pense ici il faudra mettre le accept(patternvisitor) et donc changer les parametres
+    v->visite(this);
 }
 
 double Rond::calculerAire() const {

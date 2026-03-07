@@ -5,6 +5,7 @@
 #include "Groupe.h"
 #include <sstream>
 #include "../Connexion/ConnexionServeur.h"
+#include "../Visiteur/VisiteurDessin.h"
 
 Groupe::operator std::string() const {
     std::ostringstream o;
@@ -19,10 +20,8 @@ Groupe::operator std::string() const {
     return s;
 }
 
-void Groupe::dessiner() const {
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
-    //std::cout << message ; // Utilisé pour debug
+void Groupe::dessiner(VisiteurDessin* v) const {
+    v->visite(this);
 }
 
 double Groupe::calculerAire() const {

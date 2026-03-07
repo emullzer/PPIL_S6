@@ -8,6 +8,8 @@
 #include <string>
 #include "../Calculs/Plan.h"
 
+class VisiteurDessin;
+
 
 class Forme {
 protected:
@@ -17,7 +19,7 @@ protected:
 public:
     virtual ~Forme() = default;
 
-    virtual void dessiner() const = 0;
+    virtual void dessiner(VisiteurDessin* v) const = 0;
     virtual explicit operator std::string() const =0;
     virtual double calculerAire() const = 0;
 

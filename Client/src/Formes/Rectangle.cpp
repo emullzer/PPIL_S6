@@ -4,10 +4,10 @@
 
 #include "Rectangle.h"
 #include "../Connexion/ConnexionServeur.h"
+#include "../Visiteur/VisiteurDessin.h"
 
-void Formes::Rectangle::dessiner() const {
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
+void Formes::Rectangle::dessiner(VisiteurDessin* v) const {
+    v->visite(this);
 }
 
 Formes::Rectangle::operator std::string() const {

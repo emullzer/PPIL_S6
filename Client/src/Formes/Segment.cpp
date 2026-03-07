@@ -4,6 +4,7 @@
 
 #include "Segment.h"
 #include "../Connexion/ConnexionServeur.h"
+#include "../Visiteur/VisiteurDessin.h"
 
 Segment::operator std::string() const {
     std::ostringstream o;
@@ -11,10 +12,8 @@ Segment::operator std::string() const {
     return o.str();
 }
 
-void Segment::dessiner() const {
-    std::string message = this->operator std::string()+"\n";
-    ConnexionServeur::getInstance().envoyerRequete(message);
-    //std::cout << message ; // Utilisé pour debug
+void Segment::dessiner(VisiteurDessin* v) const {
+    v->visite(this);
 }
 
 double Segment::calculerAire() const {
