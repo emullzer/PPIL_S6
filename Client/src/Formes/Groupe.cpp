@@ -34,4 +34,4 @@ void Groupe::preparerPixel(Plan& plan) {
     for (auto const& forme : formesGroupe) {
         forme->preparerPixel(plan);
     }
-    }
+}

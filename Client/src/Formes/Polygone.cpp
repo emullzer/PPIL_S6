@@ -41,5 +41,6 @@ void Polygone::preparerPixel(Plan &plan) {
     for( auto const& point : points ) {
         o <<" ( "<< point << ")";
     }
+    o << " " << color << std::endl;
     return o.str();
 }

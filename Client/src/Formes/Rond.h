@@ -19,6 +19,7 @@ class Rond: public Forme {
     public:
     Rond(double x, double y, double r,const std::string& color) {
         position = Vecteur2D(x,y);
+        if (rayon <0) throw std::invalid_argument("rayon invalide");
         this->rayon = r;
         this->color = color;
         id = auto_id++;

@@ -17,6 +17,7 @@ class Forme {
 protected:
     std::string color;
     int id;
+    Groupe* groupePt = nullptr;
     static int auto_id; // sert a définir automatiquement l'id d'une forme
 public:
     virtual ~Forme() = default;
@@ -45,6 +46,17 @@ public:
     virtual std::string tranformerCoordonnees()const = 0;
 
     virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+
+    void setParent(Groupe* nouveauParent) {
+        if (groupePt != nullptr && nouveauParent != nullptr) {
+            // Optionnel : lever une exception ou retirer la forme de l'ancien groupe
+            throw std::runtime_error("Erreur : La forme appartient deja a un groupe !");
+        }
+        groupePt = nouveauParent;
+    }
+    Groupe* getParent() {
+        return groupePt;
+    }
 };
 
 

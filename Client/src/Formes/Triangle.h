@@ -25,7 +25,7 @@ class Triangle: public Forme{
     }
 
     void dessiner(Visiteur* v) const override;
-     void sauvegarder(VisiteurSauvegarde* v) const override;
+    void sauvegarder(VisiteurSauvegarde* v) const override;
     virtual std::string tranformerCoordonnees()const override;
     explicit operator std::string() const override;
     double calculerAire() const override;

@@ -31,6 +31,6 @@ void Segment::preparerPixel(Plan &plan) {
 }
 std::string Segment::tranformerCoordonnees()const {
     std::ostringstream o;
-    o << "( " << A << ") (" << B << ")" << std::endl;
+    o << "( " << A << ") (" << B << ") " << color << std::endl;
     return o.str();
 }

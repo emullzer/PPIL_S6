@@ -36,6 +36,6 @@ void Triangle::preparerPixel(Plan &plan) {
 }
  std::string Triangle::tranformerCoordonnees()const {
     std::ostringstream o;
-    o << "( " << sommet1 << ") (" << sommet2 << ") (" << sommet3 << ")" << std::endl;
+    o << "( " << sommet1 << ") (" << sommet2 << ") (" << sommet3 << ") " << color << std::endl;
     return o.str();
 }

@@ -34,6 +34,6 @@ void Formes::Rectangle::preparerPixel(Plan &plan) {
 
 std::string Formes::Rectangle::tranformerCoordonnees()const {
     std::ostringstream o;
-    o << "( " << p1 << ") (" << p2 << ") (" << p3 << ") (" << p4 << ")" << std::endl;
+    o << "( " << p1 << ") (" << p2 << ") (" << p3 << ") (" << p4 << ") " << color << std::endl;
     return o.str();
 }

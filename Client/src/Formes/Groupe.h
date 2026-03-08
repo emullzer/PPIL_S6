@@ -22,6 +22,9 @@ public:
     ~Groupe() override = default;
     void ajouterForme(Forme* &forme) {
         forme->setCouleur(color);
+        if (forme->getParent() != nullptr) {
+            throw std::invalid_argument("La forme est deja dans un groupe");
+        }
         this->formesGroupe.push_back(forme);
     }
 
@@ -85,6 +88,7 @@ public:
     }
 
     void sauvegarder(VisiteurSauvegarde* v) const override;
+
     virtual std::string tranformerCoordonnees()const override{}
 
 };

@@ -43,8 +43,13 @@ add_executable(PPIL_CLIENT
         src/COR/ExpertChargerArete.h
         src/COR/ExpertChargerArete.cpp
         src/COR/ExpertChargerFaces.h
-        src/COR/ExpertChargerCouleur.h
         src/COR/ExpertChargerFaces.cpp
+        src/COR/ExpertChargerTriangle.h
+        src/COR/ExpertChargerTriangle.cpp
+        src/COR/ExpertChargerRond.h
+        src/COR/ExpertChargerRond.cpp
+        src/COR/ExpertChargerRectangle.h
+        src/COR/ExpertChargerRectangle.cpp
 
 )
 target_link_libraries(PPIL_CLIENT ws2_32)

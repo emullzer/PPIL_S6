@@ -12,7 +12,7 @@ namespace Formes {
         Vecteur2D p1Pixel, p2Pixel, p3Pixel, p4Pixel;
 
     public:
-        Rectangle(double x1, double y1, double x2, double y2, const std::string& color) {
+        Rectangle(double x1, double y1, double x2, double y2,double x3,double y3,double x4,double y4, const std::string& color) {
 
             p1 = Vecteur2D(x1, y1); // Haut-Gauche
             p2 = Vecteur2D(x2, y1); // Haut-Droit
