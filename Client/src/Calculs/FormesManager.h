@@ -12,10 +12,13 @@
 #include "Vecteur2D.h"
 #include "../Connexion/ConnexionServeur.h"
 
+class Expert;
+
 class FormesManager {
     Plan plan;
     std::vector<Forme*> VectorFormes;
     std::optional<Vecteur2D> rectangleHG, rectangleBD;
+    Expert* expertCharger = nullptr;
 
 
     void dessinerFormes();
@@ -36,6 +39,7 @@ class FormesManager {
         FormesManager():plan(Vecteur2D(-5,-5),10,10),VectorFormes() {}
 
         void ajouterForme(Forme *forme);
+        void ajouterVectorForme(std::vector<Forme *> formes);
 
         void nettoyer()
         {
@@ -43,6 +47,9 @@ class FormesManager {
         }
 
         void updateFormes();
+
+        bool chargerFormes(const std::string& nomFichier);
+        void setupCOR();
 
 };
 

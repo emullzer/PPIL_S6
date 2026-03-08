@@ -22,7 +22,7 @@ public class ExpertSegment extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[4]);
 
-            formes.add(new Segment(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color, Integer.parseInt(valeurs[4])));
+            formes.add(new Segment(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color, Integer.parseInt(valeurs[5])));
             return "Segment ajoute.";
         }catch (NumberFormatException e)
         {

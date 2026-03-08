@@ -9,17 +9,16 @@
 
 class ExpertCharger : public Expert {
     public:
-        using Expert::Expert; // Utilise le constructeur de la base
+        using Expert::Expert;
 
-        // Logique commune : si je ne sais pas faire, je demande au suivant
-        Forme* resoudre(const std::string& ligne) const override;
+        Forme* charger(const std::string& ligne) const override;
 
     protected:
-        // Chaque sous-classe implémentera sa propre analyse de texte ici
-        virtual Formes::Forme* resoudre2(const std::string& ligne) const = 0;
-    };
 
+        virtual Forme* charger2(const std::string& ligne) const = 0;
 };
+
+
 
 
 

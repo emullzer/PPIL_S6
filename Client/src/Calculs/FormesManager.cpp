@@ -4,7 +4,12 @@
 
 #include "FormesManager.h"
 #include "../Visiteur/VisiteurDessinJava.h"
-
+#include <fstream>
+#include "../COR/ExpertCharger.h"
+#include "../COR/ExpertChargerArete.h"
+#include "../COR/ExpertChargerFaces.h"
+#include <thread>
+#include <chrono>
 
 void FormesManager::ajouterForme(Forme *forme) {
     VectorFormes.push_back(forme);
@@ -20,6 +25,14 @@ void FormesManager::ajouterForme(Forme *forme) {
         dessinerFormes();
 
 }
+
+void FormesManager::ajouterVectorForme(std::vector<Forme *> formes) {
+    for(Forme *forme : formes) {
+        VectorFormes.push_back(forme);
+    }
+    updateFormes();
+}
+
 
 void FormesManager::updateBordsFormes(Forme* forme) {
     double minX = std::min(forme->getMinX(),rectangleHG->getX());
@@ -71,6 +84,43 @@ void FormesManager::updatePlan() {
     plan.setLMonde((rectangleBD->getX()-rectangleHG->getX()));
     plan.setHMonde((rectangleHG->getY()-rectangleBD->getY()));
     plan.calculerMatrice();
+}
+
+bool FormesManager::chargerFormes(const std::string& nomFichier) {
+    //on utilise un ifstream pour Uniquement Lire le fichier
+    std::ifstream fichier(nomFichier);
+
+    if (!fichier.is_open()) {
+        return false;
+    }
+
+    std::string ligne;
+    std::vector<Forme*> formes;
+    setupCOR();
+
+    int cpt = 0;
+
+    while (std::getline(fichier, ligne)) {
+        Forme* forme = expertCharger->charger(ligne);
+        if (forme != nullptr) {
+            formes.push_back(forme);
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
+            std::cout<<cpt++;
+        }
+    }
+    ajouterVectorForme(formes);
+    return true;
+}
+
+void FormesManager::setupCOR() {
+
+    if (expertCharger == nullptr) {
+        ExpertCharger* maillon3 = nullptr; // Expert final (ex: ExpertParDefaut)
+        ExpertCharger* maillon2 = new ExpertChargerFaces(maillon3);
+        ExpertCharger* maillon1 = new ExpertChargerArete(maillon2);
+
+        expertCharger = maillon1;
+    }
 }
 
 

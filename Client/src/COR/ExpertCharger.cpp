@@ -4,12 +4,12 @@
 
 #include "ExpertCharger.h"
 
-Forme *ExpertCharger::resoudre(const std::string &ligne) const {
+Forme *ExpertCharger::charger(const std::string &ligne) const {
 
-    Forme* f = resoudre2(ligne);
+    Forme* f = charger2(ligne);
     if (f != nullptr) return f;
 
-    if (suivant != nullptr) return suivant->resoudre(ligne);
+    if (suivant != nullptr) return suivant->charger(ligne);
 
     return nullptr; // Personne n'a trouvé
 }

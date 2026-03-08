@@ -51,13 +51,22 @@ int main() {
                 auto* fm = new FormesManager();
                 Forme* f1 = new Formes::Rectangle(4,3,6,1,"green");
                 Forme* f2 = new Rond(-2,0.1,1.4,"black");
+                Forme* f3 = new Segment(4,3.1,5,3,"blue");
                 fm->ajouterForme(f1);
                 fm->ajouterForme(f2);
+                fm->ajouterForme(f3);
                 std::cin >> ch;
                 f1->rotation(1.1,Vecteur2D(1,3));
                 fm->updateFormes();
                 break;
                 }
+
+            case 3: {
+                auto* fm = new FormesManager();
+                std::string chemin = R"(C:\Users\sanes\Downloads\faces.txt)";
+                if (!(fm->chargerFormes(chemin))) std::cout << "erreur" << std::endl;
+
+            }
 
         }
 

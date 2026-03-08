@@ -38,7 +38,7 @@ public class Interlocuteur extends Thread {
                 if (requete == null) this.interrupt();
                 else
                 {
-                    System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
+                   //System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
 
                     String reponse = chaineCOR.afficher(requete);
                     if (reponse ==null)
@@ -47,7 +47,6 @@ public class Interlocuteur extends Thread {
                     }
                     else {
 
-                        this.fluxSortant.println(requete);
                         tableau.afficherDessin(formesADessiner);
                     }
                 }
