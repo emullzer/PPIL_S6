@@ -28,7 +28,7 @@ int main() {
                 f1 = new Rond(2,2,1,"red");
                 fm->ajouterForme(f1);
                 std::cin >> c;
-                f2 = new Formes::Rectangle(8,3,6,1,"green");
+                f2 = new Formes::Rectangle(1,1,2,2,1,2,2,1,"green");
 
                 fm->ajouterForme(f2);
                 std::cin >> c;
@@ -50,7 +50,7 @@ int main() {
 
             case 2:{
                 auto* fm = new FormesManager();
-                Forme* f1 = new Formes::Rectangle(4,3,6,1,"green");
+                Forme* f1 = new Formes::Rectangle(1,1,2,2,1,2,2,1,"green");
                 Forme* f2 = new Rond(-2,0.1,1.4,"black");
                 Forme* f3 = new Segment(4,3.1,5,3,"blue");
                 Groupe* f4 = new Groupe("red");
@@ -68,7 +68,7 @@ int main() {
 
             case 3: {
                 auto* fm = new FormesManager();
-                std::string chemin = R"(C:\Users\sanes\Downloads\faces.txt)";
+                std::string chemin = R"(C:\Users\sanes\Downloads\aretes2.txt)";
                 if (!(fm->chargerFormes(chemin))) std::cout << "erreur" << std::endl;
 
             }
@@ -85,7 +85,7 @@ int main() {
                 g->ajouterForme(f4);
                 g->ajouterForme(f5);
                 g->ajouterForme(f6);
-                VisiteurSauvegardeTexte* v = new VisiteurSauvegardeTexte();
+                auto* v = new VisiteurSauvegardeTexte();
                 v->sauvegarder(g);
             }
 

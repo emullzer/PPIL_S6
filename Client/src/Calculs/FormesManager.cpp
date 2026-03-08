@@ -8,6 +8,9 @@
 #include "../COR/ExpertCharger.h"
 #include "../COR/ExpertChargerArete.h"
 #include "../COR/ExpertChargerFaces.h"
+#include "../COR/ExpertChargerRectangle.h"
+#include "../COR/ExpertChargerRond.h"
+#include "../COR/ExpertChargerTriangle.h"
 #include "../Formes/Groupe.h"
 
 
@@ -111,7 +114,10 @@ bool FormesManager::chargerFormes(const std::string& nomFichier) {
 void FormesManager::setupCOR() {
 
     if (expertCharger == nullptr) {
-        ExpertCharger* maillon3 = nullptr; // Expert final (ex: ExpertParDefaut)
+        ExpertCharger* maillon6 = nullptr;
+        ExpertCharger* maillon5 = new ExpertChargerTriangle(maillon6);
+        ExpertCharger* maillon4 = new ExpertChargerRond(maillon5);
+        ExpertCharger* maillon3 = new ExpertChargerRectangle(maillon4);
         ExpertCharger* maillon2 = new ExpertChargerFaces(maillon3);
         ExpertCharger* maillon1 = new ExpertChargerArete(maillon2);
 
