@@ -66,5 +66,6 @@ public class Interlocuteur extends Thread {
         chaineCOR = new ExpertTriangle(formesADessiner,chaineCOR);
         chaineCOR = new ExpertNettoyage(formesADessiner,chaineCOR);
         chaineCOR = new ExpertRectangle(formesADessiner,chaineCOR);
+        chaineCOR = new ExpertPolygone(formesADessiner,chaineCOR);
     }
 }

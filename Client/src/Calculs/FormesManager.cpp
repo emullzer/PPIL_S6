@@ -98,17 +98,13 @@ bool FormesManager::chargerFormes(const std::string& nomFichier) {
     std::vector<Forme*> formes;
     setupCOR();
 
-    int cpt = 0;
-
     while (std::getline(fichier, ligne)) {
         Forme* forme = expertCharger->charger(ligne);
         if (forme != nullptr) {
             formes.push_back(forme);
-            std::this_thread::sleep_for(std::chrono::milliseconds(20));
-            std::cout<<cpt++;
         }
     }
-    ajouterVectorForme(formes);
+    if (!formes.empty())ajouterVectorForme(formes);
     return true;
 }
 
