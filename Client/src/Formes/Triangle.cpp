@@ -23,8 +23,7 @@ void Triangle::sauvegarder(VisiteurSauvegarde* v) const {
 }
 
 double Triangle::calculerAire() const {
-    double aire = 0.5 * std::abs(Vecteur2D::determinant(sommet1,sommet2,sommet3));
-    return aire;
+    return 0.5 * std::abs(Vecteur2D::determinant(sommet1,sommet2,sommet3));
 }
 
 void Triangle::preparerPixel(Plan &plan) {

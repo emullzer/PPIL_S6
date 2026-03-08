@@ -27,7 +27,11 @@ void Groupe::sauvegarder(VisiteurSauvegarde* v) const {
 }
 
 double Groupe::calculerAire() const {
-    return 0;
+    double aireTotale = 0.0;
+    for(auto const& forme : formesGroupe) {
+        aireTotale += forme->calculerAire();
+    }
+    return aireTotale;
 }
 
 void Groupe::preparerPixel(Plan& plan) {
