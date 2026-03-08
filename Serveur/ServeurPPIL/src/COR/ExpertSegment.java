@@ -8,11 +8,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertSegment extends Expert{
-    public ExpertSegment(ArrayList<Forme> formes, Expert suivant) {
-        super(formes,suivant);
+    public ExpertSegment( Expert suivant) {
+        super(suivant);
     }
 
-    public String afficher2(String text) {
+    public Forme afficher2(String text) {
         String type = text.split("\\[")[0];
         if (!type.equals("Segment")) {
             return null;
@@ -22,11 +22,10 @@ public class ExpertSegment extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[4]);
 
-            formes.add(new Segment(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color, Integer.parseInt(valeurs[5])));
-            return "Segment ajoute.";
+            return (new Segment(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),color, Integer.parseInt(valeurs[5])));
         }catch (NumberFormatException e)
         {
-            return "Probleme dans les valeurs de Segment.";
+            return null;
         }
     }
 }

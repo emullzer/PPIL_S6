@@ -17,7 +17,7 @@ class Polygone;
 
 
 
-class VisiteurDessin {
+class Visiteur {
 public:
   virtual void visite(const Groupe* groupe) = 0;
   virtual void visite(const Polygone* polygone) = 0;

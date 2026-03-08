@@ -24,7 +24,7 @@ class Rond: public Forme {
         id = auto_id++;
     }
 
-    void dessiner(VisiteurDessin* v) const override;
+    void dessiner(Visiteur* v) const override;
     explicit operator std::string() const override;
     double calculerAire() const override;
 

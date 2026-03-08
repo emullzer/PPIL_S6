@@ -8,7 +8,7 @@
 #include <string>
 #include "../Calculs/Plan.h"
 
-class VisiteurDessin;
+class Visiteur;
 
 
 class Forme {
@@ -19,9 +19,15 @@ protected:
 public:
     virtual ~Forme() = default;
 
-    virtual void dessiner(VisiteurDessin* v) const = 0;
+    virtual void dessiner(Visiteur* v) const = 0;
     virtual explicit operator std::string() const =0;
     virtual double calculerAire() const = 0;
+
+    //Fonction utilisée par Groupe qui permet de changer la couleur d'une forme
+    void setCouleur(std::string couleur) {
+        color = couleur;
+    }
+    std::string getCouleur(){return this->color;}
 
     virtual double getMinX()const = 0;
     virtual double getMinY()const = 0;

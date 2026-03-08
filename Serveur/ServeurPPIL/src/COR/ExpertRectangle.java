@@ -8,11 +8,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertRectangle extends Expert{
-    public ExpertRectangle(ArrayList<Forme> formes, Expert suivant) {
-        super(formes,suivant);
+    public ExpertRectangle( Expert suivant) {
+        super(suivant);
     }
 
-    public String afficher2(String text) {
+    public Forme afficher2(String text) {
         String type = text.split("\\[")[0];
         if (!type.equals("Rectangle")) {
             return null;
@@ -22,12 +22,11 @@ public class ExpertRectangle extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[8]);
 
-            formes.add(new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),
-                    Double.parseDouble(valeurs[4]),Double.parseDouble(valeurs[5]),Double.parseDouble(valeurs[6]),Double.parseDouble(valeurs[7]),color,Integer.parseInt(valeurs[9])));
-            return "Rectangle ajoute.";
+            return new Rectangle(Double.parseDouble(valeurs[0]),Double.parseDouble(valeurs[1]),Double.parseDouble(valeurs[2]),Double.parseDouble(valeurs[3]),
+                    Double.parseDouble(valeurs[4]),Double.parseDouble(valeurs[5]),Double.parseDouble(valeurs[6]),Double.parseDouble(valeurs[7]),color,Integer.parseInt(valeurs[9]));
         }catch (NumberFormatException e)
         {
-            return "Probleme dans les valeurs de Rectangle.";
+            return null;
         }
     }
 }

@@ -31,8 +31,7 @@ add_executable(PPIL_CLIENT
         src/Calculs/Matrice22.h
         src/Calculs/FormesManager.h
         src/Calculs/FormesManager.cpp
-        src/Visiteur/VisiteurDessin.h
-        src/Visiteur/VisiteurDessin.cpp
+        src/Visiteur/Visiteur.h
         src/Visiteur/VisiteurDessinJava.h
         src/Visiteur/VisiteurDessinJava.cpp
         src/Visiteur/VisiteurSauvegarde.h
@@ -43,6 +42,7 @@ add_executable(PPIL_CLIENT
         src/COR/ExpertChargerArete.h
         src/COR/ExpertChargerArete.cpp
         src/COR/ExpertChargerFaces.h
+        src/COR/ExpertChargerCouleur.h
         src/COR/ExpertChargerFaces.cpp
 
 )

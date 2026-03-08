@@ -7,17 +7,19 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertNettoyage extends Expert{
+    private ArrayList<Forme> formes;
     public ExpertNettoyage(ArrayList<Forme> formes, Expert suivant) {
-        super(formes,suivant);
+        super(suivant);
+        this.formes = formes;
     }
 
-    public String afficher2(String text) {
+    public Forme afficher2(String text) {
         String type = text.split("\\[")[0];
         if (!type.equals("Nettoyer")) {
             return null;
         }
 
         formes.clear();
-        return "Nettoyage effectue";
+        return null;
     }
 }

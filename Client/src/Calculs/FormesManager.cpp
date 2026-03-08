@@ -8,8 +8,8 @@
 #include "../COR/ExpertCharger.h"
 #include "../COR/ExpertChargerArete.h"
 #include "../COR/ExpertChargerFaces.h"
-#include <thread>
-#include <chrono>
+#include "../Formes/Groupe.h"
+
 
 void FormesManager::ajouterForme(Forme *forme) {
     VectorFormes.push_back(forme);
@@ -95,7 +95,7 @@ bool FormesManager::chargerFormes(const std::string& nomFichier) {
     }
 
     std::string ligne;
-    std::vector<Forme*> formes;
+    std::vector<Forme *> formes;
     setupCOR();
 
     while (std::getline(fichier, ligne)) {

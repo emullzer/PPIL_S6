@@ -52,9 +52,13 @@ int main() {
                 Forme* f1 = new Formes::Rectangle(4,3,6,1,"green");
                 Forme* f2 = new Rond(-2,0.1,1.4,"black");
                 Forme* f3 = new Segment(4,3.1,5,3,"blue");
-                fm->ajouterForme(f1);
-                fm->ajouterForme(f2);
-                fm->ajouterForme(f3);
+                Groupe* f4 = new Groupe("red");
+                f4->ajouterForme(f1);
+                f4->ajouterForme(f2);
+                f4->ajouterForme(f3);
+                fm->ajouterForme(f4);
+                //fm->ajouterForme(f2);
+                //fm->ajouterForme(f3);
                 std::cin >> ch;
                 f1->rotation(1.1,Vecteur2D(1,3));
                 fm->updateFormes();

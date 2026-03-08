@@ -5,7 +5,7 @@
 #include "Rond.h"
 #include <sstream>
 #include "../Connexion/ConnexionServeur.h"
-#include "../Visiteur/VisiteurDessin.h"
+#include "../Visiteur/Visiteur.h"
 
 
 Rond::operator std::string() const {
@@ -14,7 +14,7 @@ Rond::operator std::string() const {
     return o.str();
 }
 
-void Rond::dessiner(VisiteurDessin* v) const { //Je pense ici il faudra mettre le accept(patternvisitor) et donc changer les parametres
+void Rond::dessiner(Visiteur* v) const { //Je pense ici il faudra mettre le accept(patternvisitor) et donc changer les parametres
     v->visite(this);
 }
 

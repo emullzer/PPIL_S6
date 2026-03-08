@@ -4,7 +4,7 @@
 
 #include "Segment.h"
 #include "../Connexion/ConnexionServeur.h"
-#include "../Visiteur/VisiteurDessin.h"
+#include "../Visiteur/Visiteur.h"
 
 Segment::operator std::string() const {
     std::ostringstream o;
@@ -12,7 +12,7 @@ Segment::operator std::string() const {
     return o.str();
 }
 
-void Segment::dessiner(VisiteurDessin* v) const {
+void Segment::dessiner(Visiteur* v) const {
     v->visite(this);
 }
 

@@ -8,11 +8,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ExpertRond extends Expert{
-    public ExpertRond(ArrayList<Forme> formes, Expert suivant) {
-        super(formes,suivant);
+    public ExpertRond( Expert suivant) {
+        super(suivant);
     }
 
-    public String afficher2(String text) {
+    public Forme afficher2(String text) {
         String type = text.split("\\[")[0];
         if (!type.equals("Rond")) {
             return null;
@@ -21,10 +21,9 @@ public class ExpertRond extends Expert{
             String[] valeurs = getValeurs(text);
             Color color = TraducteurCouleur.getCouleur(valeurs[3]);
 
-            formes.add(new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color,Integer.parseInt(valeurs[4])));
-            return "Rond ajoute";
+            return new Rond(Double.parseDouble(valeurs[0]), Double.parseDouble(valeurs[1]), Double.parseDouble(valeurs[2]),color,Integer.parseInt(valeurs[4]));
         }catch (NumberFormatException e){
-            return "Probleme avec les valeurs de Rond.";
+            return null;
         }
     }
 }

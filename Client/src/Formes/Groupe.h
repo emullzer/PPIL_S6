@@ -13,20 +13,20 @@
 class Groupe : public Forme {
 private:
     std::vector<Forme*> formesGroupe;
-    std::vector<Forme*> formesGroupePixel;
 
 public:
-    explicit Groupe(const std::string &couleur){
+     explicit Groupe(const std::string &couleur){
         this->color = couleur;
         id = auto_id++;
     }
     ~Groupe() override = default;
     void ajouterForme(Forme* &forme) {
+        forme->setCouleur(color);
         this->formesGroupe.push_back(forme);
     }
 
     explicit operator std::string() const override;
-    void dessiner(VisiteurDessin* v) const override;
+    void dessiner(Visiteur* v) const override;
     double calculerAire() const override;
 
     double getMaxY() const override {
@@ -57,6 +57,9 @@ public:
             min = std::min(min, forme->getMinX());
         }
         return min;
+    }
+    int getNbFormes()const {
+        return formesGroupe.size();
     }
     void preparerPixel(Plan &plan) override;
 

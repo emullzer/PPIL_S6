@@ -5,22 +5,21 @@
 #include "Groupe.h"
 #include <sstream>
 #include "../Connexion/ConnexionServeur.h"
-#include "../Visiteur/VisiteurDessin.h"
+#include "../Visiteur/Visiteur.h"
 
 Groupe::operator std::string() const {
     std::ostringstream o;
-    o << "Groupe[" << formesGroupePixel.size() << "," << color << "," << id << ",";
-    for(auto const& forme : formesGroupePixel) {
-      o << std::string(*forme) << ",";
+    o << "Groupe "  << id << ";";
+    for(auto const& forme : formesGroupe) {
+      o << std::string(*forme) << ";";
     }
     std::string s = o.str();
     s.pop_back();
 
-    s += "]";
     return s;
 }
 
-void Groupe::dessiner(VisiteurDessin* v) const {
+void Groupe::dessiner(Visiteur* v) const {
     v->visite(this);
 }
 
@@ -29,4 +28,7 @@ double Groupe::calculerAire() const {
 }
 
 void Groupe::preparerPixel(Plan& plan) {
+    for (auto const& forme : formesGroupe) {
+        forme->preparerPixel(plan);
+    }
     }

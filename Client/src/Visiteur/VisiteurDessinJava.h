@@ -4,10 +4,10 @@
 
 #ifndef VISITEURDESSINJAVA_H
 #define VISITEURDESSINJAVA_H
-#include "VisiteurDessin.h"
+#include "Visiteur.h"
 
 
-class VisiteurDessinJava: public VisiteurDessin {
+class VisiteurDessinJava: public Visiteur {
   //on laisse en virtual dans le cas ou l'on pourrait déssiner le dessin Java avec plusieurs librairies differentes
     virtual void visite(const Groupe* groupe);
     virtual void visite(const Polygone* polygone);

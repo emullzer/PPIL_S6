@@ -38,15 +38,15 @@ public class Interlocuteur extends Thread {
                 if (requete == null) this.interrupt();
                 else
                 {
-                   //System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
+                   System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
 
-                    String reponse = chaineCOR.afficher(requete);
-                    if (reponse ==null)
+                    Forme forme = chaineCOR.afficher(requete);
+                    if (forme ==null)
                     {
                         this.fluxSortant.println("Aucun expert n'a compris votre requete.");
                     }
                     else {
-
+                        formesADessiner.add(forme);
                         tableau.afficherDessin(formesADessiner);
                     }
                 }
@@ -61,11 +61,12 @@ public class Interlocuteur extends Thread {
     }
 
     private void setupCOR(){
-        chaineCOR = new ExpertRond(formesADessiner,chaineCOR);
-        chaineCOR = new ExpertSegment(formesADessiner,chaineCOR);
-        chaineCOR = new ExpertTriangle(formesADessiner,chaineCOR);
+        chaineCOR = new ExpertRond(chaineCOR);
+        chaineCOR = new ExpertSegment(chaineCOR);
+        chaineCOR = new ExpertTriangle(chaineCOR);
         chaineCOR = new ExpertNettoyage(formesADessiner,chaineCOR);
-        chaineCOR = new ExpertRectangle(formesADessiner,chaineCOR);
-        chaineCOR = new ExpertPolygone(formesADessiner,chaineCOR);
+        chaineCOR = new ExpertRectangle(chaineCOR);
+        chaineCOR = new ExpertPolygone(chaineCOR);
+        chaineCOR = new ExpertGroupe(chaineCOR,chaineCOR);
     }
 }

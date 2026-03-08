@@ -4,7 +4,7 @@
 
 #include "Polygone.h"
 #include "../Connexion/ConnexionServeur.h"
-#include "../Visiteur/VisiteurDessin.h"
+#include "../Visiteur/Visiteur.h"
 
 Polygone::operator std::string() const {
     std::ostringstream o;
@@ -17,7 +17,7 @@ Polygone::operator std::string() const {
     return o.str();
 }
 
-void Polygone::dessiner(VisiteurDessin* v) const {
+void Polygone::dessiner(Visiteur* v) const {
     v->visite(this);
 }
 

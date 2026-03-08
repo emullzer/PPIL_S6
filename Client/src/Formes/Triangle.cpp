@@ -4,7 +4,7 @@
 
 #include "Triangle.h"
 #include "../Connexion/ConnexionServeur.h"
-#include "../Visiteur/VisiteurDessin.h"
+#include "../Visiteur/Visiteur.h"
 #include <sstream>
 
 
@@ -15,7 +15,7 @@ Triangle::operator std::string() const {
 }
 
 
-void Triangle::dessiner(VisiteurDessin* v) const{
+void Triangle::dessiner(Visiteur* v) const{
     v->visite(this);
 }
 

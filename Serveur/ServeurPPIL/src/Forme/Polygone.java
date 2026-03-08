@@ -7,9 +7,10 @@ import java.util.ArrayList;
 public class Polygone extends Forme{
     String[] points;
 
-    public Polygone(String[] points, Color color) {
+    public Polygone(String[] points, Color color,int id) {
         this.points = points;
         this.color = color;
+        this.id = id;
     }
     @Override
     public void dessiner(Graphics2D g) {
