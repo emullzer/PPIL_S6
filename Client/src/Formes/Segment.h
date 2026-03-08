@@ -23,7 +23,8 @@ class Segment: public Forme {
         }
 
         explicit operator std::string() const override;
-        virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+        void sauvegarder(VisiteurSauvegarde* v) const override;
+        virtual std::string tranformerCoordonnees()const override;
         void dessiner(Visiteur* v) const override;
         double calculerAire() const override ;
 

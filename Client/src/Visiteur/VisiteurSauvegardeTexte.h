@@ -4,19 +4,23 @@
 
 #ifndef VISITEURSAUVEGARDETEXTE_H
 #define VISITEURSAUVEGARDETEXTE_H
+#include <fstream>
+
 #include "VisiteurSauvegarde.h"
 
 
 class VisiteurSauvegardeTexte : public VisiteurSauvegarde {
-
+    std::ofstream* texte;
+public:
   using VisiteurSauvegarde::VisiteurSauvegarde;
 
-    virtual void visite(const Groupe* groupe);
-    virtual void visite(const Polygone* polygone);
-    virtual void visite(const Formes::Rectangle* rectangle);
-    virtual void visite(const Rond* rond);
-    virtual void visite(const Segment* segment);
-    virtual void visite(const Triangle * triangle);
+        void sauvegarder(const Forme* forme);
+        void visite(const Groupe* groupe) override;
+        void visite(const Polygone* polygone)override;
+        void visite(const Formes::Rectangle* rectangle)override;
+        void visite(const Rond* rond)override;
+        void visite(const Segment* segment)override;
+        void visite(const Triangle * triangle)override;
 
 
 };

@@ -34,3 +34,12 @@ void Polygone::preparerPixel(Plan &plan) {
         pointsPixel.push_back(plan.getMatrice()* point +omega);
     }
 }
+
+ std::string Polygone::tranformerCoordonnees()const {
+    std::ostringstream o;
+    o << points.size() ;
+    for( auto const& point : points ) {
+        o <<" ( "<< point << ")";
+    }
+    return o.str();
+}

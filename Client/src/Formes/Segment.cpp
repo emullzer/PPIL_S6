@@ -29,3 +29,8 @@ void Segment::preparerPixel(Plan &plan) {
     APixel = plan.getMatrice() * A + omega;
     BPixel = plan.getMatrice() * B + omega;
 }
+std::string Segment::tranformerCoordonnees()const {
+    std::ostringstream o;
+    o << "( " << A << ") (" << B << ")" << std::endl;
+    return o.str();
+}

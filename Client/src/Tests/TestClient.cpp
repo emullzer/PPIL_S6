@@ -10,6 +10,7 @@
 #include "../Formes/Triangle.h"
 #include "../Formes/Groupe.h"
 #include "../Formes/Rectangle.h"
+#include "../Visiteur/VisiteurSauvegardeTexte.h"
 
 
 int main() {
@@ -70,6 +71,22 @@ int main() {
                 std::string chemin = R"(C:\Users\sanes\Downloads\faces.txt)";
                 if (!(fm->chargerFormes(chemin))) std::cout << "erreur" << std::endl;
 
+            }
+            case 4: {
+                auto* fm = new FormesManager();
+                Groupe* g = new Groupe("green");
+                Forme* f2 = new Segment(4,3.1,5,3,"green");
+                Forme* f3 = new Segment(8,3.1,0,3,"green");
+                Forme* f4 = new Segment(4,31,5,3,"green");
+                Forme* f5 = new Segment(4,3.1,2.9292293729372,3,"green");
+                Forme* f6 = new Segment(0.0001,3.1,5,3,"green");
+                g->ajouterForme(f2);
+                g->ajouterForme(f3);
+                g->ajouterForme(f4);
+                g->ajouterForme(f5);
+                g->ajouterForme(f6);
+                VisiteurSauvegardeTexte* v = new VisiteurSauvegardeTexte();
+                v->sauvegarder(g);
             }
 
         }

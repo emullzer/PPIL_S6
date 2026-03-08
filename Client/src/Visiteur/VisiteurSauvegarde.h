@@ -10,11 +10,12 @@ class Forme;
 
 class VisiteurSauvegarde : public Visiteur {
 protected:
-    std::string cheminFichier;
+    std::string nomFichier;
 
 public:
-    explicit VisiteurSauvegarde(const std::string& chemin) : cheminFichier(chemin) {}
-    VisiteurSauvegarde(){cheminFichier = "../FormesSauv/formesSauvegarde.txt";}
+    explicit VisiteurSauvegarde(const std::string& chemin) : nomFichier(chemin) {}
+    VisiteurSauvegarde(){nomFichier = "Sauvegarde.txt";}
+    virtual void sauvegarder(const Forme* f) = 0;
 
 };
 

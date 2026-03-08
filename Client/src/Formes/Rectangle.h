@@ -26,7 +26,7 @@ namespace Formes {
         void dessiner(Visiteur* v) const override;
         explicit operator std::string() const override;
         double calculerAire() const override;
-        virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+        void sauvegarder(VisiteurSauvegarde* v) const override;
 
 
         void translation(const Vecteur2D& v) override {
@@ -55,6 +55,7 @@ namespace Formes {
         double getMinX() const override { return std::min({p1.getX(), p2.getX(), p3.getX(), p4.getX()}); }
 
         void preparerPixel(Plan &plan) override ;
+        virtual std::string tranformerCoordonnees()const override;
     };
 }
 

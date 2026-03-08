@@ -34,3 +34,9 @@ void Rond::preparerPixel( Plan &plan) {
 
 }
 
+std::string Rond::tranformerCoordonnees()const {
+    std::ostringstream o;
+    o << "( " << position << ") "<< rayon << std::endl;
+    return o.str();
+}
+

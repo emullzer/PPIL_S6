@@ -42,6 +42,8 @@ public:
     virtual void translation(const Vecteur2D& v) = 0;
     virtual void homothetie(double rapport, const Vecteur2D& centre) = 0;
 
+    virtual std::string tranformerCoordonnees()const = 0;
+
     virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
 };
 

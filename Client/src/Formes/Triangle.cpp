@@ -34,3 +34,8 @@ void Triangle::preparerPixel(Plan &plan) {
     sommet2Pixel = plan.getMatrice() * sommet2 + omega;
     sommet3Pixel = plan.getMatrice() * sommet3 + omega;
 }
+ std::string Triangle::tranformerCoordonnees()const {
+    std::ostringstream o;
+    o << "( " << sommet1 << ") (" << sommet2 << ") (" << sommet3 << ")" << std::endl;
+    return o.str();
+}

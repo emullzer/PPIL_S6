@@ -85,7 +85,8 @@ class Polygone : public Forme {
             point = centre + matRotation * (point - centre);
         }
     }
-    virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+    void sauvegarder(VisiteurSauvegarde* v) const override;
+    virtual std::string tranformerCoordonnees()const override;
 
 };
 

@@ -61,6 +61,9 @@ public:
     int getNbFormes()const {
         return formesGroupe.size();
     }
+    std::vector<Forme*> getFormes()const {
+        return formesGroupe;
+    }
     void preparerPixel(Plan &plan) override;
 
     void translation(const Vecteur2D& v) override {
@@ -81,7 +84,8 @@ public:
         }
     }
 
-    virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+    void sauvegarder(VisiteurSauvegarde* v) const override;
+    virtual std::string tranformerCoordonnees()const override{}
 
 };
 

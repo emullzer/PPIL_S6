@@ -31,3 +31,9 @@ void Formes::Rectangle::preparerPixel(Plan &plan) {
     p3Pixel = plan.getMatrice() * p3 + omega;
     p4Pixel = plan.getMatrice() * p4 + omega;
 }
+
+std::string Formes::Rectangle::tranformerCoordonnees()const {
+    std::ostringstream o;
+    o << "( " << p1 << ") (" << p2 << ") (" << p3 << ") (" << p4 << ")" << std::endl;
+    return o.str();
+}
