@@ -81,6 +81,8 @@ public:
         }
     }
 
+    virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
+
 };
 
 

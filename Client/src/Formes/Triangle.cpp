@@ -18,6 +18,9 @@ Triangle::operator std::string() const {
 void Triangle::dessiner(Visiteur* v) const{
     v->visite(this);
 }
+void Triangle::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 double Triangle::calculerAire() const {
     double aire = 0.5 * std::abs(Vecteur2D::determinant(sommet1,sommet2,sommet3));

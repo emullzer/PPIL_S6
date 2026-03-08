@@ -17,6 +17,9 @@ Rond::operator std::string() const {
 void Rond::dessiner(Visiteur* v) const { //Je pense ici il faudra mettre le accept(patternvisitor) et donc changer les parametres
     v->visite(this);
 }
+void Rond::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 double Rond::calculerAire() const {
     return rayon *  std::numbers::pi * std::numbers::pi;

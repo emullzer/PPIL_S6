@@ -9,6 +9,9 @@
 void Formes::Rectangle::dessiner(Visiteur* v) const {
     v->visite(this);
 }
+void Formes::Rectangle::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 Formes::Rectangle::operator std::string() const {
     std::ostringstream o;

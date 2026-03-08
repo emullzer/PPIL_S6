@@ -22,6 +22,9 @@ Groupe::operator std::string() const {
 void Groupe::dessiner(Visiteur* v) const {
     v->visite(this);
 }
+void Groupe::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 double Groupe::calculerAire() const {
     return 0;

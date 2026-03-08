@@ -20,6 +20,9 @@ Polygone::operator std::string() const {
 void Polygone::dessiner(Visiteur* v) const {
     v->visite(this);
 }
+void Polygone::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 double Polygone::calculerAire() const {
     return 0;

@@ -15,6 +15,9 @@ Segment::operator std::string() const {
 void Segment::dessiner(Visiteur* v) const {
     v->visite(this);
 }
+void Segment::sauvegarder(VisiteurSauvegarde* v) const {
+    return v->visite(this);
+}
 
 double Segment::calculerAire() const {
     return 0;

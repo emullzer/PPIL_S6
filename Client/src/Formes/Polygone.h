@@ -85,6 +85,7 @@ class Polygone : public Forme {
             point = centre + matRotation * (point - centre);
         }
     }
+    virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
 
 };
 

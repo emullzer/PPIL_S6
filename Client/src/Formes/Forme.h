@@ -7,8 +7,10 @@
 #include <iostream>
 #include <string>
 #include "../Calculs/Plan.h"
+#include "../Visiteur/VisiteurSauvegarde.h"
 
 class Visiteur;
+class VisiteurSauvegarde;
 
 
 class Forme {
@@ -39,6 +41,8 @@ public:
     virtual void rotation(double angle, const Vecteur2D& centre) = 0;
     virtual void translation(const Vecteur2D& v) = 0;
     virtual void homothetie(double rapport, const Vecteur2D& centre) = 0;
+
+    virtual void sauvegarder(VisiteurSauvegarde* v) const = 0;
 };
 
 

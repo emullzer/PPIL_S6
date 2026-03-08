@@ -19,6 +19,8 @@ class Polygone;
 
 class Visiteur {
 public:
+  virtual ~Visiteur() = default;
+
   virtual void visite(const Groupe* groupe) = 0;
   virtual void visite(const Polygone* polygone) = 0;
   virtual void visite(const Formes::Rectangle* rectangle) = 0;

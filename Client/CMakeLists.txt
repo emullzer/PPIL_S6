@@ -35,7 +35,8 @@ add_executable(PPIL_CLIENT
         src/Visiteur/VisiteurDessinJava.h
         src/Visiteur/VisiteurDessinJava.cpp
         src/Visiteur/VisiteurSauvegarde.h
-        src/Visiteur/VisiteurSauvegarde.cpp
+        src/Visiteur/VisiteurSauvegardeTexte.h
+        src/Visiteur/VisiteurSauvegardeTexte.cpp
         src/COR/Expert.h
         src/COR/ExpertCharger.h
         src/COR/ExpertCharger.cpp
