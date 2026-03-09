@@ -5,6 +5,7 @@
 #include "Triangle.h"
 #include "../Connexion/ConnexionServeur.h"
 #include "../Visiteur/Visiteur.h"
+#include "../Visiteur/VisiteurSauvegarde.h"
 #include <sstream>
 
 
@@ -19,7 +20,7 @@ void Triangle::dessiner(Visiteur* v) const{
     v->visite(this);
 }
 void Triangle::sauvegarder(VisiteurSauvegarde* v) const {
-    return v->visite(this);
+    v->visite(this);
 }
 
 double Triangle::calculerAire() const {

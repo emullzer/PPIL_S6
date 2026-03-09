@@ -6,6 +6,7 @@
 #include <sstream>
 #include "../Connexion/ConnexionServeur.h"
 #include "../Visiteur/Visiteur.h"
+#include "../Visiteur/VisiteurSauvegarde.h"
 
 
 Rond::operator std::string() const {

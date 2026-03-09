@@ -114,10 +114,9 @@ bool FormesManager::chargerFormes(const std::string& nomFichier) {
 void FormesManager::setupCOR() {
 
     if (expertCharger == nullptr) {
-        ExpertCharger* maillon6 = nullptr;
-        ExpertCharger* maillon5 = new ExpertChargerTriangle(maillon6);
-        ExpertCharger* maillon4 = new ExpertChargerRond(maillon5);
-        ExpertCharger* maillon3 = new ExpertChargerRectangle(maillon4);
+        ExpertCharger* maillon5 = nullptr;
+        ExpertCharger* maillon4 = new ExpertChargerTriangle(maillon5);
+        ExpertCharger* maillon3 = new ExpertChargerRond(maillon4);
         ExpertCharger* maillon2 = new ExpertChargerFaces(maillon3);
         ExpertCharger* maillon1 = new ExpertChargerArete(maillon2);
 

@@ -68,7 +68,7 @@ int main() {
 
             case 3: {
                 auto* fm = new FormesManager();
-                std::string chemin = R"(C:\Users\sanes\Downloads\aretes2.txt)";
+                std::string chemin = R"(C:\Users\mulle1149u\Downloads\faces.txt)";
                 if (!(fm->chargerFormes(chemin))) std::cout << "erreur" << std::endl;
 
             }

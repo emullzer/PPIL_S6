@@ -5,6 +5,7 @@
 #include "Rectangle.h"
 #include "../Connexion/ConnexionServeur.h"
 #include "../Visiteur/Visiteur.h"
+#include "../Visiteur/VisiteurSauvegarde.h"
 
 void Formes::Rectangle::dessiner(Visiteur* v) const {
     v->visite(this);

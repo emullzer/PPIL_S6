@@ -5,6 +5,7 @@
 #include "Segment.h"
 #include "../Connexion/ConnexionServeur.h"
 #include "../Visiteur/Visiteur.h"
+#include "../Visiteur/VisiteurSauvegarde.h"
 
 Segment::operator std::string() const {
     std::ostringstream o;
@@ -17,10 +18,6 @@ void Segment::dessiner(Visiteur* v) const {
 }
 void Segment::sauvegarder(VisiteurSauvegarde* v) const {
     return v->visite(this);
-}
-
-double Segment::calculerAire() const {
-    return 0;
 }
 
 void Segment::preparerPixel(Plan &plan) {
