@@ -7,11 +7,18 @@ import dessin.TraducteurCouleur;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Classe permettant de déchiffrer les requetes de type Triangle.
+ */
 public class ExpertTriangle extends Expert{
+    /**
+     * Constructeur.
+     * @param suivant Prochain maillon de la chaine.
+     */
     public ExpertTriangle( Expert suivant) {
         super(suivant);
     }
-
+    @Override
     public Forme afficher2(String text) {
         String type = text.split("\\[")[0];
         if (!type.equals("Triangle")) {

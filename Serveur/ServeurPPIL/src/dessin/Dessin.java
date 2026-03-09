@@ -6,14 +6,31 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 
+/**
+ * Classe gérant l'affichage des formes sur une Frame.
+ * Cette classe est instanciée une fois par chaque interlocuteur.
+ */
 public  class Dessin {
+    /**
+     * Frame sur laquelle les formes vont être dessinées.
+     */
     private Frame frame;
+    /**
+     * BufferStrategy de la Frame, permettant d'obtenir les Graphics pour dessiner.
+     */
     private BufferStrategy bufferStrategy;
 
+    /**
+     * Constructeur par défaut, Initialise automatiquement la frame avec les bons paramètres.
+     */
     public Dessin() {
         setupFrame();
     }
 
+    /**
+     * Permet d'initialiser une Frame et sa BufferStrategy.
+     * Déclare certains paramètres comme setIgnoreRepaint à true et Resizable a false.
+     */
     private void setupFrame() {
         try {
             if (frame == null) {
@@ -32,10 +49,21 @@ public  class Dessin {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Retourne les graphics du BufferStrategy, permettant d'afficher les formes dessus.
+     * Usage unique.
+     * @return
+     */
     public Graphics getGraphics() {
         return bufferStrategy.getDrawGraphics();
     }
 
+    /**
+     * Fonction qui affiche les formes données en paramètres.
+     * Commence par nettoyer le canvas, puis pour chacune des formes, appelle sa méthode dessiner.
+     * @param formeArrayList Liste de formes donnée par l'interlocuteur.
+     */
     public void afficherDessin(ArrayList<Forme> formeArrayList){
         Graphics2D g2 = (Graphics2D) getGraphics();
 

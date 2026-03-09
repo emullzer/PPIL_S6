@@ -4,14 +4,31 @@ import java.awt.*;
 import java.awt.geom.Path2D;
 import java.util.ArrayList;
 
+/**
+ * Classe Polygone représentant la forme du Polygone.
+ */
 public class Polygone extends Forme{
+    /**
+     * Tableau représentant l'ensemble des points du polygone ( Au moins 3).
+     */
     String[] points;
 
+    /**
+     * Constructeur de Polygone.
+     * @param points Liste des points du polygone.
+     * @param color Couleur de la forme.
+     * @param id Identifiant unique.
+     */
     public Polygone(String[] points, Color color,int id) {
         this.points = points;
         this.color = color;
         this.id = id;
     }
+
+    /**
+     * Fonction qui permet de dessiner le Polygone.
+     * @param g graphics du Buffer de la Frame sur laquelle on dessine.
+     */
     @Override
     public void dessiner(Graphics2D g) {
         g.setColor(this.color);

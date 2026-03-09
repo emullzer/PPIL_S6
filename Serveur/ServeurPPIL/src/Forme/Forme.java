@@ -2,6 +2,9 @@ package Forme;
 
 import java.awt.*;
 
+/**
+ * Classe abstraite suivant les Formes du client, utilisée pour dessiner chacune des formes.
+ */
 public abstract class Forme {
     Color color;
     int id;
