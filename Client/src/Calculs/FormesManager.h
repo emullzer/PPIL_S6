@@ -92,6 +92,11 @@ class FormesManager {
          */
         void setupCOR();
 
+    /**
+     * @brief Fonction qui Clear la liste de formes, remet a zero aussi l'affichage
+     */
+    void remettreAZero();
+
 };
 
 #endif //FORMESMANAGER_H

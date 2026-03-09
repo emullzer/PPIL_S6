@@ -13,7 +13,8 @@
 #include "../Visiteur/VisiteurSauvegardeTexte.h"
 
 
-int main() {
+/*
+ int main() {
     std::string ch;
     try {
         std::cout << "1 pour test formes + homothetie et tt pour Rond et triangle";
@@ -98,3 +99,4 @@ int main() {
     std::cin >> ch;
     return 0;
 }
+*/

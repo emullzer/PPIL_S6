@@ -56,9 +56,7 @@ public:
      * @inheritdoc
      * @return L'aire calculée via la formule PI * r².
      */
-    double calculerAire() const override {
-        return M_PI * rayon * rayon;
-    }
+    double calculerAire() const override;
 
     /** @name Calcul des limites (Bounding Box)
       * Ces méthodes parcourent toutes les formes pour déterminer l'enveloppe globale du groupe.

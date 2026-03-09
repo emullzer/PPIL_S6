@@ -38,7 +38,7 @@ public class Interlocuteur extends Thread {
                 if (requete == null) this.interrupt();
                 else
                 {
-                   System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
+                   //System.out.println("Le client n° " + this.noConnexion + " à envoyé : " + requete);
 
                     Forme forme = chaineCOR.afficher(requete);
                     if (forme ==null)

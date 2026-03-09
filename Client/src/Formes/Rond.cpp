@@ -23,7 +23,7 @@ void Rond::sauvegarder(VisiteurSauvegarde* v) const {
 }
 
 double Rond::calculerAire() const {
-    return rayon *  std::numbers::pi * std::numbers::pi;
+    return M_PI * rayon * rayon;
 }
 
 void Rond::preparerPixel( Plan &plan) {

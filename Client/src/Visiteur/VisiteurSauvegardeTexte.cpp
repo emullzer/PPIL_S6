@@ -26,7 +26,9 @@ void VisiteurSauvegardeTexte::sauvegarder(const Forme *forme) {
 
         this->texte = nullptr;
         fichier.close();
+        std::cout << "Fichier sauvegardé!" <<std::endl;
     }
+    else std::cout << "Problème lors de la sauvegarde." <<std::endl;
 }
 
 

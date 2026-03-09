@@ -115,13 +115,19 @@ void FormesManager::setupCOR() {
 
     if (expertCharger == nullptr) {
         ExpertCharger* maillon5 = nullptr;
-        ExpertCharger* maillon4 = new ExpertChargerTriangle(maillon5);
-        ExpertCharger* maillon3 = new ExpertChargerRond(maillon4);
-        ExpertCharger* maillon2 = new ExpertChargerFaces(maillon3);
+       // ExpertCharger* maillon4 = new ExpertChargerTriangle(maillon5);
+        //ExpertCharger* maillon3 = new ExpertChargerRond(maillon4);
+        ExpertCharger* maillon2 = new ExpertChargerFaces(maillon5);
         ExpertCharger* maillon1 = new ExpertChargerArete(maillon2);
 
         expertCharger = maillon1;
     }
+}
+
+
+void FormesManager::remettreAZero() {
+    this->VectorFormes.clear();
+    nettoyer();
 }
 
 

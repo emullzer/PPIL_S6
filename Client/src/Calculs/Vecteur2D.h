@@ -104,7 +104,7 @@ public:
 };
 
 /** @brief Multiplication scalaire * vecteur (opérateur externe). */
-inline Vecteur2D operator*(const double &a, const Vecteur2D& v) { return v * a; }
+inline Vecteur2D operator*(const double &a, const Vecteur2D& v);
 
 /** @brief Surcharge de l'opérateur de flux. */
 inline std::ostream& operator<<(std::ostream &o, const Vecteur2D &v)
